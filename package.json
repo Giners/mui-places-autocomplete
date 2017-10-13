@@ -1,0 +1,9 @@
+{
+  "name": "google-places-material-ui-autocomplete",
+  "version": "1.0.0",
+  "description": "Material-UI React component that provides suggestions/autocompletes places using the Google Places API",
+  "main": "index.js",
+  "repository": "https://github.com/Giners/google-places-material-ui-autocomplete.git",
+  "author": "Chris Austin <caustin.adwan@gmail.com>",
+  "license": "MIT"
+}
