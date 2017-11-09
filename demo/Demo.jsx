@@ -1,5 +1,5 @@
 import React from 'react'
-import MUIPlacesAutocomplete from './../src'
+import MUIPlacesAutocomplete from './../dist'
 
 const Demo = () => (<MUIPlacesAutocomplete />)
 

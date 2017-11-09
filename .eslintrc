@@ -1,19 +1,29 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
   "extends": [
     "airbnb"
   ],
   "plugins": [
-    "html"
+    "html",
+    "chai-friendly"
   ],
   "rules": {
     "semi": [
       2,
       "never"
-    ]
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "consistent": true },
+        "ObjectPattern": { "consistent": true }
+      }
+    ],
+    "react/forbid-prop-types": 0,
   },
   "parser": "babel-eslint",
 }
