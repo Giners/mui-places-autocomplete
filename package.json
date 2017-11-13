@@ -53,5 +53,9 @@
     "mocha": "^4.0.1",
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.1"
-  }
+  },
+  "contributors": [
+    "Chris Austin <caustin.adwan@gmail.com>",
+    "Matt Bailey <m@mdb.io> (http://mdb.io)"
+  ]
 }
