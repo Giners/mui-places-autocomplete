@@ -1,0 +1,70 @@
+# Features
+* Easy to use input for searching for places
+* Place suggestions displayed in realtime
+* Google Material Design styling provided by Material-UI
+
+# Installation
+To install this component run the following command:
+
+```
+yarn add mui-google-places 
+```
+
+or
+
+```
+npm install mui-google-places --save
+```
+
+# Setup
+This component relies on some basic setup before usage. It makes use of services provided by Google. To properly make use of the services you will need to do three things:
+1. Enable the Google Places API Web Service
+2. Enable the Google Maps JavaScript API
+3. Obtain a Google API key
+
+You can do all of these things from your Google developers console here: https://console.developers.google.com
+
+The component relies on the Places library in the Google Maps JavaScript API. To load the Places library on the client you must add the following to the HTML document you deliver to your clients:
+
+```html
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+```
+
+Be sure that you replace `YOUR_API_KEY` with the one you just created or obtained previously.
+
+This component also has testing which makes use of the Places library in the Google Maps JavaScript API. Rather than loading the Places library it uses a module provided by Google. It also requires an API key. This key can be provided to a file @ `test/api-key.js`. If you would like it can also be provided as an environment variable named `GOOGLE_API_KEY`.
+
+# Usage
+```javascript
+import React from 'react'
+import MUIPlacesAutocomplete from 'mui-google-places'
+
+const Example = () => (<MUIPlacesAutocomplete />)
+
+export default Example
+```
+
+# Demo
+To see a demo of this component locally clone this repository and run:
+
+```
+yarn demo
+```
+
+or
+
+```
+npm run demo
+```
+
+Note that you must have followed the setup steps to run the demo as it depends on services provided by Google.
+
+# Feedback
+This was my first open-source project that I undertook while I was teaching myself full-stack development (JS (ES6)/HTML/CSS, Node, Express, NoSQL (DynamoDB), GraphQL, React, Redux, Material-UI, etc.). I'm very interested in taking feedback to either improve my skills (i.e. correct errors :)) or to make this component more useful in general/for your use case. Please feel free to provide feedback by opening an issue or messaging me.
+
+# References
+* Info about the Google Maps JavaScript API: https://developers.google.com/maps/documentation/javascript/libraries
+* Overview and examples for the Autocomplete features in the Places library: https://developers.google.com/maps/documentation/javascript/places-autocomplete
+
+# License
+MIT
