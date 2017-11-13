@@ -1,0 +1,1683 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for given application state: Empty input renders no suggestions after previous ones rendered 1`] = `
+<MUIPlacesAutocomplete
+  classes={Object {}}
+>
+  <Autosuggest
+    alwaysRenderSuggestions={false}
+    focusInputOnSuggestionClick={true}
+    getSuggestionValue={[Function]}
+    highlightFirstSuggestion={false}
+    id="1"
+    inputProps={
+      Object {
+        "autoFocus": true,
+        "classes": Object {},
+        "onChange": [Function],
+        "placeholder": "Search for a place",
+        "value": "",
+      }
+    }
+    multiSection={false}
+    onSuggestionsClearRequested={[Function]}
+    onSuggestionsFetchRequested={[Function]}
+    renderInputComponent={[Function]}
+    renderSuggestion={[Function]}
+    renderSuggestionsContainer={[Function]}
+    shouldRenderSuggestions={[Function]}
+    suggestions={Array []}
+    theme={
+      Object {
+        "container": undefined,
+        "suggestion": undefined,
+        "suggestionsContainerOpen": undefined,
+        "suggestionsList": undefined,
+      }
+    }
+  >
+    <Autowhatever
+      getSectionItems={[Function]}
+      highlightedItemIndex={null}
+      highlightedSectionIndex={null}
+      id="1"
+      inputProps={
+        Object {
+          "autoFocus": true,
+          "classes": Object {},
+          "onBlur": [Function],
+          "onChange": [Function],
+          "onFocus": [Function],
+          "onKeyDown": [Function],
+          "placeholder": "Search for a place",
+          "value": "",
+        }
+      }
+      itemProps={[Function]}
+      items={Array []}
+      multiSection={false}
+      renderInputComponent={[Function]}
+      renderItem={[Function]}
+      renderItemData={
+        Object {
+          "query": "",
+        }
+      }
+      renderItemsContainer={[Function]}
+      renderSectionTitle={[Function]}
+      theme={
+        Object {
+          "container": undefined,
+          "item": undefined,
+          "itemsContainerOpen": undefined,
+          "itemsList": undefined,
+        }
+      }
+    >
+      <div
+        key="react-autowhatever-1-container"
+        style={Object {}}
+      >
+        <TextField
+          InputProps={
+            Object {
+              "aria-activedescendant": null,
+              "aria-autocomplete": "list",
+              "aria-expanded": false,
+              "aria-haspopup": false,
+              "aria-owns": "react-autowhatever-1",
+              "autoComplete": "off",
+              "classes": Object {
+                "input": undefined,
+              },
+              "key": "react-autowhatever-1-input",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Search for a place",
+              "role": "combobox",
+              "style": Object {},
+              "type": "text",
+            }
+          }
+          autoFocus={true}
+          className={undefined}
+          inputRef={[Function]}
+          required={false}
+          select={false}
+          value=""
+        >
+          <withStyles(FormControl)
+            className={undefined}
+            error={undefined}
+            fullWidth={undefined}
+            required={false}
+          >
+            <FormControl
+              className={undefined}
+              classes={
+                Object {
+                  "fullWidth": "MuiFormControl-fullWidth-4",
+                  "marginDense": "MuiFormControl-marginDense-3",
+                  "marginNormal": "MuiFormControl-marginNormal-2",
+                  "root": "MuiFormControl-root-1",
+                }
+              }
+              component="div"
+              disabled={false}
+              error={false}
+              fullWidth={false}
+              margin="none"
+              required={false}
+            >
+              <div
+                className="MuiFormControl-root-1"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                required={false}
+              >
+                <withStyles(Input)
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-expanded={false}
+                  aria-haspopup={false}
+                  aria-owns="react-autowhatever-1"
+                  autoComplete="off"
+                  autoFocus={true}
+                  className={undefined}
+                  classes={
+                    Object {
+                      "input": undefined,
+                    }
+                  }
+                  defaultValue={undefined}
+                  disabled={undefined}
+                  id={undefined}
+                  inputProps={undefined}
+                  inputRef={[Function]}
+                  key="react-autowhatever-1-input"
+                  multiline={undefined}
+                  name={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search for a place"
+                  role="combobox"
+                  rows={undefined}
+                  rowsMax={undefined}
+                  style={Object {}}
+                  type="text"
+                  value=""
+                >
+                  <Input
+                    aria-activedescendant={null}
+                    aria-autocomplete="list"
+                    aria-expanded={false}
+                    aria-haspopup={false}
+                    aria-owns="react-autowhatever-1"
+                    autoComplete="off"
+                    autoFocus={true}
+                    className={undefined}
+                    classes={
+                      Object {
+                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
+                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
+                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
+                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
+                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
+                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
+                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
+                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
+                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
+                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
+                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
+                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
+                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
+                        "disabled": "MuiInput-disabled-11",
+                        "error": "MuiInput-error-8",
+                        "focused": "MuiInput-focused-12",
+                        "formControl": "MuiInput-formControl-6",
+                        "fullWidth": "MuiInput-fullWidth-19",
+                        "inkbar": "MuiInput-inkbar-7",
+                        "input": "MuiInput-input-9",
+                        "inputDense": "MuiInput-inputDense-10",
+                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "inputMultiline": "MuiInput-inputMultiline-18",
+                        "inputSearch": "MuiInput-inputSearch-17",
+                        "inputSingleline": "MuiInput-inputSingleline-16",
+                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
+                        "multiline": "MuiInput-multiline-14",
+                        "root": "MuiInput-root-5",
+                        "underline": "MuiInput-underline-13",
+                      }
+                    }
+                    defaultValue={undefined}
+                    disableUnderline={false}
+                    disabled={undefined}
+                    fullWidth={false}
+                    id={undefined}
+                    inputProps={undefined}
+                    inputRef={[Function]}
+                    multiline={false}
+                    name={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search for a place"
+                    role="combobox"
+                    rows={undefined}
+                    rowsMax={undefined}
+                    style={Object {}}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      aria-activedescendant={null}
+                      aria-autocomplete="list"
+                      aria-expanded={false}
+                      aria-haspopup={false}
+                      aria-owns="react-autowhatever-1"
+                      className="MuiInput-root-5 MuiInput-focused-12 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      role="combobox"
+                      style={Object {}}
+                    >
+                      <input
+                        autoComplete="off"
+                        autoFocus={true}
+                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        defaultValue={undefined}
+                        disabled={false}
+                        id={undefined}
+                        name={undefined}
+                        onChange={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={undefined}
+                        placeholder="Search for a place"
+                        readOnly={undefined}
+                        required={undefined}
+                        rows={undefined}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                </withStyles(Input)>
+              </div>
+            </FormControl>
+          </withStyles(FormControl)>
+        </TextField>
+        <div
+          id="react-autowhatever-1"
+          key="react-autowhatever-1-items-container"
+          style={Object {}}
+        />
+      </div>
+    </Autowhatever>
+  </Autosuggest>
+</MUIPlacesAutocomplete>
+`;
+
+exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for given application state: Google logo is present in a populated list of suggestions 1`] = `
+<MUIPlacesAutocomplete
+  classes={Object {}}
+>
+  <Autosuggest
+    alwaysRenderSuggestions={false}
+    focusInputOnSuggestionClick={true}
+    getSuggestionValue={[Function]}
+    highlightFirstSuggestion={false}
+    id="1"
+    inputProps={
+      Object {
+        "autoFocus": true,
+        "classes": Object {},
+        "onChange": [Function],
+        "placeholder": "Search for a place",
+        "value": "Bellingham",
+      }
+    }
+    multiSection={false}
+    onSuggestionsClearRequested={[Function]}
+    onSuggestionsFetchRequested={[Function]}
+    renderInputComponent={[Function]}
+    renderSuggestion={[Function]}
+    renderSuggestionsContainer={[Function]}
+    shouldRenderSuggestions={[Function]}
+    suggestions={
+      Array [
+        Object {
+          "description": "Bellingham, WA, United States",
+        },
+      ]
+    }
+    theme={
+      Object {
+        "container": undefined,
+        "suggestion": undefined,
+        "suggestionsContainerOpen": undefined,
+        "suggestionsList": undefined,
+      }
+    }
+  >
+    <Autowhatever
+      getSectionItems={[Function]}
+      highlightedItemIndex={null}
+      highlightedSectionIndex={null}
+      id="1"
+      inputProps={
+        Object {
+          "autoFocus": true,
+          "classes": Object {},
+          "onBlur": [Function],
+          "onChange": [Function],
+          "onFocus": [Function],
+          "onKeyDown": [Function],
+          "placeholder": "Search for a place",
+          "value": "Bellingham",
+        }
+      }
+      itemProps={[Function]}
+      items={
+        Array [
+          Object {
+            "description": "Bellingham, WA, United States",
+          },
+        ]
+      }
+      multiSection={false}
+      renderInputComponent={[Function]}
+      renderItem={[Function]}
+      renderItemData={
+        Object {
+          "query": "Bellingham",
+        }
+      }
+      renderItemsContainer={[Function]}
+      renderSectionTitle={[Function]}
+      theme={
+        Object {
+          "container": undefined,
+          "item": undefined,
+          "itemsContainerOpen": undefined,
+          "itemsList": undefined,
+        }
+      }
+    >
+      <div
+        key="react-autowhatever-1-container"
+        style={Object {}}
+      >
+        <TextField
+          InputProps={
+            Object {
+              "aria-activedescendant": null,
+              "aria-autocomplete": "list",
+              "aria-expanded": true,
+              "aria-haspopup": true,
+              "aria-owns": "react-autowhatever-1",
+              "autoComplete": "off",
+              "classes": Object {
+                "input": undefined,
+              },
+              "key": "react-autowhatever-1-input",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Search for a place",
+              "role": "combobox",
+              "style": Object {},
+              "type": "text",
+            }
+          }
+          autoFocus={true}
+          className={undefined}
+          inputRef={[Function]}
+          required={false}
+          select={false}
+          value="Bellingham"
+        >
+          <withStyles(FormControl)
+            className={undefined}
+            error={undefined}
+            fullWidth={undefined}
+            required={false}
+          >
+            <FormControl
+              className={undefined}
+              classes={
+                Object {
+                  "fullWidth": "MuiFormControl-fullWidth-4",
+                  "marginDense": "MuiFormControl-marginDense-3",
+                  "marginNormal": "MuiFormControl-marginNormal-2",
+                  "root": "MuiFormControl-root-1",
+                }
+              }
+              component="div"
+              disabled={false}
+              error={false}
+              fullWidth={false}
+              margin="none"
+              required={false}
+            >
+              <div
+                className="MuiFormControl-root-1"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                required={false}
+              >
+                <withStyles(Input)
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-expanded={true}
+                  aria-haspopup={true}
+                  aria-owns="react-autowhatever-1"
+                  autoComplete="off"
+                  autoFocus={true}
+                  className={undefined}
+                  classes={
+                    Object {
+                      "input": undefined,
+                    }
+                  }
+                  defaultValue={undefined}
+                  disabled={undefined}
+                  id={undefined}
+                  inputProps={undefined}
+                  inputRef={[Function]}
+                  key="react-autowhatever-1-input"
+                  multiline={undefined}
+                  name={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search for a place"
+                  role="combobox"
+                  rows={undefined}
+                  rowsMax={undefined}
+                  style={Object {}}
+                  type="text"
+                  value="Bellingham"
+                >
+                  <Input
+                    aria-activedescendant={null}
+                    aria-autocomplete="list"
+                    aria-expanded={true}
+                    aria-haspopup={true}
+                    aria-owns="react-autowhatever-1"
+                    autoComplete="off"
+                    autoFocus={true}
+                    className={undefined}
+                    classes={
+                      Object {
+                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
+                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
+                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
+                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
+                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
+                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
+                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
+                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
+                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
+                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
+                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
+                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
+                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
+                        "disabled": "MuiInput-disabled-11",
+                        "error": "MuiInput-error-8",
+                        "focused": "MuiInput-focused-12",
+                        "formControl": "MuiInput-formControl-6",
+                        "fullWidth": "MuiInput-fullWidth-19",
+                        "inkbar": "MuiInput-inkbar-7",
+                        "input": "MuiInput-input-9",
+                        "inputDense": "MuiInput-inputDense-10",
+                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "inputMultiline": "MuiInput-inputMultiline-18",
+                        "inputSearch": "MuiInput-inputSearch-17",
+                        "inputSingleline": "MuiInput-inputSingleline-16",
+                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
+                        "multiline": "MuiInput-multiline-14",
+                        "root": "MuiInput-root-5",
+                        "underline": "MuiInput-underline-13",
+                      }
+                    }
+                    defaultValue={undefined}
+                    disableUnderline={false}
+                    disabled={undefined}
+                    fullWidth={false}
+                    id={undefined}
+                    inputProps={undefined}
+                    inputRef={[Function]}
+                    multiline={false}
+                    name={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search for a place"
+                    role="combobox"
+                    rows={undefined}
+                    rowsMax={undefined}
+                    style={Object {}}
+                    type="text"
+                    value="Bellingham"
+                  >
+                    <div
+                      aria-activedescendant={null}
+                      aria-autocomplete="list"
+                      aria-expanded={true}
+                      aria-haspopup={true}
+                      aria-owns="react-autowhatever-1"
+                      className="MuiInput-root-5 MuiInput-focused-12 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      role="combobox"
+                      style={Object {}}
+                    >
+                      <input
+                        autoComplete="off"
+                        autoFocus={true}
+                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        defaultValue={undefined}
+                        disabled={false}
+                        id={undefined}
+                        name={undefined}
+                        onChange={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={undefined}
+                        placeholder="Search for a place"
+                        readOnly={undefined}
+                        required={undefined}
+                        rows={undefined}
+                        type="text"
+                        value="Bellingham"
+                      />
+                    </div>
+                  </Input>
+                </withStyles(Input)>
+              </div>
+            </FormControl>
+          </withStyles(FormControl)>
+        </TextField>
+        <div
+          id="react-autowhatever-1"
+          key="react-autowhatever-1-items-container"
+          style={Object {}}
+        >
+          <ItemsList
+            getItemId={[Function]}
+            highlightedItemIndex={null}
+            itemProps={[Function]}
+            items={
+              Array [
+                Object {
+                  "description": "Bellingham, WA, United States",
+                },
+              ]
+            }
+            keyPrefix="react-autowhatever-1-"
+            onHighlightedItemChange={[Function]}
+            renderItem={[Function]}
+            renderItemData={
+              Object {
+                "query": "Bellingham",
+              }
+            }
+            sectionIndex={null}
+            theme={[Function]}
+          >
+            <ul
+              key="react-autowhatever-1-items-list"
+              role="listbox"
+              style={Object {}}
+            >
+              <Item
+                data-section-index={null}
+                data-suggestion-index={0}
+                id="react-autowhatever-1--item-0"
+                isHighlighted={false}
+                item={
+                  Object {
+                    "description": "Bellingham, WA, United States",
+                  }
+                }
+                itemIndex={0}
+                key="react-autowhatever-1-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchStart={[Function]}
+                renderItem={[Function]}
+                renderItemData={
+                  Object {
+                    "query": "Bellingham",
+                  }
+                }
+                sectionIndex={null}
+                style={Object {}}
+              >
+                <li
+                  data-section-index={null}
+                  data-suggestion-index={0}
+                  id="react-autowhatever-1--item-0"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchStart={[Function]}
+                  role="option"
+                  style={Object {}}
+                >
+                  <withStyles(MenuItem)
+                    component="div"
+                    selected={false}
+                  >
+                    <MenuItem
+                      classes={
+                        Object {
+                          ".MuiMenuItem-root-20:focus": "MuiMenuItem-root-20:focus",
+                          ".MuiMenuItem-root-20:hover": "MuiMenuItem-root-20:hover",
+                          "root": "MuiMenuItem-root-20",
+                          "selected": "MuiMenuItem-selected-21",
+                        }
+                      }
+                      component="div"
+                      role="menuitem"
+                      selected={false}
+                    >
+                      <withStyles(ListItem)
+                        button={true}
+                        className="MuiMenuItem-root-20"
+                        component="div"
+                        role="menuitem"
+                        tabIndex={-1}
+                      >
+                        <ListItem
+                          button={true}
+                          className="MuiMenuItem-root-20"
+                          classes={
+                            Object {
+                              ".MuiListItem-button-30:hover": "MuiListItem-button-30:hover",
+                              ".MuiListItem-button-30:hover.MuiListItem-disabled-27": "MuiListItem-button-30:hover.MuiListItem-disabled-27",
+                              "button": "MuiListItem-button-30",
+                              "container": "MuiListItem-container-23",
+                              "default": "MuiListItem-default-25",
+                              "dense": "MuiListItem-dense-26",
+                              "disabled": "MuiListItem-disabled-27",
+                              "divider": "MuiListItem-divider-28",
+                              "gutters": "MuiListItem-gutters-29",
+                              "keyboardFocused": "MuiListItem-keyboardFocused-24",
+                              "root": "MuiListItem-root-22",
+                              "secondaryAction": "MuiListItem-secondaryAction-31",
+                            }
+                          }
+                          component="div"
+                          dense={false}
+                          disableGutters={false}
+                          disabled={false}
+                          divider={false}
+                          role="menuitem"
+                          tabIndex={-1}
+                        >
+                          <withStyles(ButtonBase)
+                            className="MuiListItem-root-22 MuiListItem-gutters-29 MuiListItem-button-30 MuiListItem-default-25 MuiMenuItem-root-20"
+                            component="div"
+                            disabled={false}
+                            keyboardFocusedClassName="MuiListItem-keyboardFocused-24"
+                            role="menuitem"
+                            tabIndex={-1}
+                          >
+                            <ButtonBase
+                              centerRipple={false}
+                              className="MuiListItem-root-22 MuiListItem-gutters-29 MuiListItem-button-30 MuiListItem-default-25 MuiMenuItem-root-20"
+                              classes={
+                                Object {
+                                  "disabled": "MuiButtonBase-disabled-33",
+                                  "root": "MuiButtonBase-root-32",
+                                }
+                              }
+                              component="div"
+                              disableRipple={false}
+                              disabled={false}
+                              focusRipple={false}
+                              keyboardFocusedClassName="MuiListItem-keyboardFocused-24"
+                              role="menuitem"
+                              tabIndex={-1}
+                              type="button"
+                            >
+                              <div
+                                className="MuiButtonBase-root-32 MuiListItem-root-22 MuiListItem-gutters-29 MuiListItem-button-30 MuiListItem-default-25 MuiMenuItem-root-20"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                role="menuitem"
+                                tabIndex={-1}
+                              >
+                                <div
+                                  key=".0"
+                                >
+                                  <strong
+                                    key="0"
+                                    style={
+                                      Object {
+                                        "fontWeight": 500,
+                                      }
+                                    }
+                                  >
+                                    Bellingham
+                                  </strong>
+                                  <span
+                                    key="1"
+                                    style={
+                                      Object {
+                                        "fontWeight": 300,
+                                      }
+                                    }
+                                  >
+                                    , WA, United States
+                                  </span>
+                                </div>
+                                <withStyles(TouchRipple)
+                                  center={false}
+                                  innerRef={[Function]}
+                                >
+                                  <TouchRipple
+                                    center={false}
+                                    classes={
+                                      Object {
+                                        "0%": "%",
+                                        "100%": "00%",
+                                        "50%": "0%",
+                                        "ripple": "MuiTouchRipple-ripple-38",
+                                        "rippleFast": "MuiTouchRipple-rippleFast-40",
+                                        "rippleVisible": "MuiTouchRipple-rippleVisible-39",
+                                        "root": "MuiTouchRipple-root-34",
+                                        "wrapper": "MuiTouchRipple-wrapper-35",
+                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-36",
+                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-37",
+                                      }
+                                    }
+                                  >
+                                    <TransitionGroup
+                                      childFactory={[Function]}
+                                      className="MuiTouchRipple-root-34"
+                                      component="span"
+                                      enter={true}
+                                      exit={true}
+                                    >
+                                      <span
+                                        className="MuiTouchRipple-root-34"
+                                      />
+                                    </TransitionGroup>
+                                  </TouchRipple>
+                                </withStyles(TouchRipple)>
+                              </div>
+                            </ButtonBase>
+                          </withStyles(ButtonBase)>
+                        </ListItem>
+                      </withStyles(ListItem)>
+                    </MenuItem>
+                  </withStyles(MenuItem)>
+                </li>
+              </Item>
+            </ul>
+          </ItemsList>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <img
+              alt=""
+              src={Object {}}
+            />
+          </div>
+        </div>
+      </div>
+    </Autowhatever>
+  </Autosuggest>
+</MUIPlacesAutocomplete>
+`;
+
+exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for given application state: Initial state 1`] = `
+<MUIPlacesAutocomplete
+  classes={Object {}}
+>
+  <Autosuggest
+    alwaysRenderSuggestions={false}
+    focusInputOnSuggestionClick={true}
+    getSuggestionValue={[Function]}
+    highlightFirstSuggestion={false}
+    id="1"
+    inputProps={
+      Object {
+        "autoFocus": true,
+        "classes": Object {},
+        "onChange": [Function],
+        "placeholder": "Search for a place",
+        "value": "",
+      }
+    }
+    multiSection={false}
+    onSuggestionsClearRequested={[Function]}
+    onSuggestionsFetchRequested={[Function]}
+    renderInputComponent={[Function]}
+    renderSuggestion={[Function]}
+    renderSuggestionsContainer={[Function]}
+    shouldRenderSuggestions={[Function]}
+    suggestions={Array []}
+    theme={
+      Object {
+        "container": undefined,
+        "suggestion": undefined,
+        "suggestionsContainerOpen": undefined,
+        "suggestionsList": undefined,
+      }
+    }
+  >
+    <Autowhatever
+      getSectionItems={[Function]}
+      highlightedItemIndex={null}
+      highlightedSectionIndex={null}
+      id="1"
+      inputProps={
+        Object {
+          "autoFocus": true,
+          "classes": Object {},
+          "onBlur": [Function],
+          "onChange": [Function],
+          "onFocus": [Function],
+          "onKeyDown": [Function],
+          "placeholder": "Search for a place",
+          "value": "",
+        }
+      }
+      itemProps={[Function]}
+      items={Array []}
+      multiSection={false}
+      renderInputComponent={[Function]}
+      renderItem={[Function]}
+      renderItemData={
+        Object {
+          "query": "",
+        }
+      }
+      renderItemsContainer={[Function]}
+      renderSectionTitle={[Function]}
+      theme={
+        Object {
+          "container": undefined,
+          "item": undefined,
+          "itemsContainerOpen": undefined,
+          "itemsList": undefined,
+        }
+      }
+    >
+      <div
+        key="react-autowhatever-1-container"
+        style={Object {}}
+      >
+        <TextField
+          InputProps={
+            Object {
+              "aria-activedescendant": null,
+              "aria-autocomplete": "list",
+              "aria-expanded": false,
+              "aria-haspopup": false,
+              "aria-owns": "react-autowhatever-1",
+              "autoComplete": "off",
+              "classes": Object {
+                "input": undefined,
+              },
+              "key": "react-autowhatever-1-input",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Search for a place",
+              "role": "combobox",
+              "style": Object {},
+              "type": "text",
+            }
+          }
+          autoFocus={true}
+          className={undefined}
+          inputRef={[Function]}
+          required={false}
+          select={false}
+          value=""
+        >
+          <withStyles(FormControl)
+            className={undefined}
+            error={undefined}
+            fullWidth={undefined}
+            required={false}
+          >
+            <FormControl
+              className={undefined}
+              classes={
+                Object {
+                  "fullWidth": "MuiFormControl-fullWidth-4",
+                  "marginDense": "MuiFormControl-marginDense-3",
+                  "marginNormal": "MuiFormControl-marginNormal-2",
+                  "root": "MuiFormControl-root-1",
+                }
+              }
+              component="div"
+              disabled={false}
+              error={false}
+              fullWidth={false}
+              margin="none"
+              required={false}
+            >
+              <div
+                className="MuiFormControl-root-1"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                required={false}
+              >
+                <withStyles(Input)
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-expanded={false}
+                  aria-haspopup={false}
+                  aria-owns="react-autowhatever-1"
+                  autoComplete="off"
+                  autoFocus={true}
+                  className={undefined}
+                  classes={
+                    Object {
+                      "input": undefined,
+                    }
+                  }
+                  defaultValue={undefined}
+                  disabled={undefined}
+                  id={undefined}
+                  inputProps={undefined}
+                  inputRef={[Function]}
+                  key="react-autowhatever-1-input"
+                  multiline={undefined}
+                  name={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search for a place"
+                  role="combobox"
+                  rows={undefined}
+                  rowsMax={undefined}
+                  style={Object {}}
+                  type="text"
+                  value=""
+                >
+                  <Input
+                    aria-activedescendant={null}
+                    aria-autocomplete="list"
+                    aria-expanded={false}
+                    aria-haspopup={false}
+                    aria-owns="react-autowhatever-1"
+                    autoComplete="off"
+                    autoFocus={true}
+                    className={undefined}
+                    classes={
+                      Object {
+                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
+                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
+                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
+                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
+                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
+                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
+                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
+                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
+                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
+                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
+                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
+                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
+                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
+                        "disabled": "MuiInput-disabled-11",
+                        "error": "MuiInput-error-8",
+                        "focused": "MuiInput-focused-12",
+                        "formControl": "MuiInput-formControl-6",
+                        "fullWidth": "MuiInput-fullWidth-19",
+                        "inkbar": "MuiInput-inkbar-7",
+                        "input": "MuiInput-input-9",
+                        "inputDense": "MuiInput-inputDense-10",
+                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "inputMultiline": "MuiInput-inputMultiline-18",
+                        "inputSearch": "MuiInput-inputSearch-17",
+                        "inputSingleline": "MuiInput-inputSingleline-16",
+                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
+                        "multiline": "MuiInput-multiline-14",
+                        "root": "MuiInput-root-5",
+                        "underline": "MuiInput-underline-13",
+                      }
+                    }
+                    defaultValue={undefined}
+                    disableUnderline={false}
+                    disabled={undefined}
+                    fullWidth={false}
+                    id={undefined}
+                    inputProps={undefined}
+                    inputRef={[Function]}
+                    multiline={false}
+                    name={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search for a place"
+                    role="combobox"
+                    rows={undefined}
+                    rowsMax={undefined}
+                    style={Object {}}
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      aria-activedescendant={null}
+                      aria-autocomplete="list"
+                      aria-expanded={false}
+                      aria-haspopup={false}
+                      aria-owns="react-autowhatever-1"
+                      className="MuiInput-root-5 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      role="combobox"
+                      style={Object {}}
+                    >
+                      <input
+                        autoComplete="off"
+                        autoFocus={true}
+                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        defaultValue={undefined}
+                        disabled={false}
+                        id={undefined}
+                        name={undefined}
+                        onChange={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={undefined}
+                        placeholder="Search for a place"
+                        readOnly={undefined}
+                        required={undefined}
+                        rows={undefined}
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </Input>
+                </withStyles(Input)>
+              </div>
+            </FormControl>
+          </withStyles(FormControl)>
+        </TextField>
+        <div
+          id="react-autowhatever-1"
+          key="react-autowhatever-1-items-container"
+          style={Object {}}
+        />
+      </div>
+    </Autowhatever>
+  </Autosuggest>
+</MUIPlacesAutocomplete>
+`;
+
+exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for given application state: Suggestions rendered from 'suggestions' state 1`] = `
+<MUIPlacesAutocomplete
+  classes={Object {}}
+>
+  <Autosuggest
+    alwaysRenderSuggestions={false}
+    focusInputOnSuggestionClick={true}
+    getSuggestionValue={[Function]}
+    highlightFirstSuggestion={false}
+    id="1"
+    inputProps={
+      Object {
+        "autoFocus": true,
+        "classes": Object {},
+        "onChange": [Function],
+        "placeholder": "Search for a place",
+        "value": "Bellingham",
+      }
+    }
+    multiSection={false}
+    onSuggestionsClearRequested={[Function]}
+    onSuggestionsFetchRequested={[Function]}
+    renderInputComponent={[Function]}
+    renderSuggestion={[Function]}
+    renderSuggestionsContainer={[Function]}
+    shouldRenderSuggestions={[Function]}
+    suggestions={
+      Array [
+        Object {
+          "description": "Bellingham, WA, United States",
+        },
+      ]
+    }
+    theme={
+      Object {
+        "container": undefined,
+        "suggestion": undefined,
+        "suggestionsContainerOpen": undefined,
+        "suggestionsList": undefined,
+      }
+    }
+  >
+    <Autowhatever
+      getSectionItems={[Function]}
+      highlightedItemIndex={null}
+      highlightedSectionIndex={null}
+      id="1"
+      inputProps={
+        Object {
+          "autoFocus": true,
+          "classes": Object {},
+          "onBlur": [Function],
+          "onChange": [Function],
+          "onFocus": [Function],
+          "onKeyDown": [Function],
+          "placeholder": "Search for a place",
+          "value": "Bellingham",
+        }
+      }
+      itemProps={[Function]}
+      items={
+        Array [
+          Object {
+            "description": "Bellingham, WA, United States",
+          },
+        ]
+      }
+      multiSection={false}
+      renderInputComponent={[Function]}
+      renderItem={[Function]}
+      renderItemData={
+        Object {
+          "query": "Bellingham",
+        }
+      }
+      renderItemsContainer={[Function]}
+      renderSectionTitle={[Function]}
+      theme={
+        Object {
+          "container": undefined,
+          "item": undefined,
+          "itemsContainerOpen": undefined,
+          "itemsList": undefined,
+        }
+      }
+    >
+      <div
+        key="react-autowhatever-1-container"
+        style={Object {}}
+      >
+        <TextField
+          InputProps={
+            Object {
+              "aria-activedescendant": null,
+              "aria-autocomplete": "list",
+              "aria-expanded": true,
+              "aria-haspopup": true,
+              "aria-owns": "react-autowhatever-1",
+              "autoComplete": "off",
+              "classes": Object {
+                "input": undefined,
+              },
+              "key": "react-autowhatever-1-input",
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "placeholder": "Search for a place",
+              "role": "combobox",
+              "style": Object {},
+              "type": "text",
+            }
+          }
+          autoFocus={true}
+          className={undefined}
+          inputRef={[Function]}
+          required={false}
+          select={false}
+          value="Bellingham"
+        >
+          <withStyles(FormControl)
+            className={undefined}
+            error={undefined}
+            fullWidth={undefined}
+            required={false}
+          >
+            <FormControl
+              className={undefined}
+              classes={
+                Object {
+                  "fullWidth": "MuiFormControl-fullWidth-4",
+                  "marginDense": "MuiFormControl-marginDense-3",
+                  "marginNormal": "MuiFormControl-marginNormal-2",
+                  "root": "MuiFormControl-root-1",
+                }
+              }
+              component="div"
+              disabled={false}
+              error={false}
+              fullWidth={false}
+              margin="none"
+              required={false}
+            >
+              <div
+                className="MuiFormControl-root-1"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                required={false}
+              >
+                <withStyles(Input)
+                  aria-activedescendant={null}
+                  aria-autocomplete="list"
+                  aria-expanded={true}
+                  aria-haspopup={true}
+                  aria-owns="react-autowhatever-1"
+                  autoComplete="off"
+                  autoFocus={true}
+                  className={undefined}
+                  classes={
+                    Object {
+                      "input": undefined,
+                    }
+                  }
+                  defaultValue={undefined}
+                  disabled={undefined}
+                  id={undefined}
+                  inputProps={undefined}
+                  inputRef={[Function]}
+                  key="react-autowhatever-1-input"
+                  multiline={undefined}
+                  name={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search for a place"
+                  role="combobox"
+                  rows={undefined}
+                  rowsMax={undefined}
+                  style={Object {}}
+                  type="text"
+                  value="Bellingham"
+                >
+                  <Input
+                    aria-activedescendant={null}
+                    aria-autocomplete="list"
+                    aria-expanded={true}
+                    aria-haspopup={true}
+                    aria-owns="react-autowhatever-1"
+                    autoComplete="off"
+                    autoFocus={true}
+                    className={undefined}
+                    classes={
+                      Object {
+                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
+                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
+                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
+                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
+                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
+                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
+                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
+                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
+                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
+                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
+                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
+                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
+                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
+                        "disabled": "MuiInput-disabled-11",
+                        "error": "MuiInput-error-8",
+                        "focused": "MuiInput-focused-12",
+                        "formControl": "MuiInput-formControl-6",
+                        "fullWidth": "MuiInput-fullWidth-19",
+                        "inkbar": "MuiInput-inkbar-7",
+                        "input": "MuiInput-input-9",
+                        "inputDense": "MuiInput-inputDense-10",
+                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "inputMultiline": "MuiInput-inputMultiline-18",
+                        "inputSearch": "MuiInput-inputSearch-17",
+                        "inputSingleline": "MuiInput-inputSingleline-16",
+                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
+                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
+                        "multiline": "MuiInput-multiline-14",
+                        "root": "MuiInput-root-5",
+                        "underline": "MuiInput-underline-13",
+                      }
+                    }
+                    defaultValue={undefined}
+                    disableUnderline={false}
+                    disabled={undefined}
+                    fullWidth={false}
+                    id={undefined}
+                    inputProps={undefined}
+                    inputRef={[Function]}
+                    multiline={false}
+                    name={undefined}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Search for a place"
+                    role="combobox"
+                    rows={undefined}
+                    rowsMax={undefined}
+                    style={Object {}}
+                    type="text"
+                    value="Bellingham"
+                  >
+                    <div
+                      aria-activedescendant={null}
+                      aria-autocomplete="list"
+                      aria-expanded={true}
+                      aria-haspopup={true}
+                      aria-owns="react-autowhatever-1"
+                      className="MuiInput-root-5 MuiInput-focused-12 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      role="combobox"
+                      style={Object {}}
+                    >
+                      <input
+                        autoComplete="off"
+                        autoFocus={true}
+                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        defaultValue={undefined}
+                        disabled={false}
+                        id={undefined}
+                        name={undefined}
+                        onChange={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={undefined}
+                        placeholder="Search for a place"
+                        readOnly={undefined}
+                        required={undefined}
+                        rows={undefined}
+                        type="text"
+                        value="Bellingham"
+                      />
+                    </div>
+                  </Input>
+                </withStyles(Input)>
+              </div>
+            </FormControl>
+          </withStyles(FormControl)>
+        </TextField>
+        <div
+          id="react-autowhatever-1"
+          key="react-autowhatever-1-items-container"
+          style={Object {}}
+        >
+          <ItemsList
+            getItemId={[Function]}
+            highlightedItemIndex={null}
+            itemProps={[Function]}
+            items={
+              Array [
+                Object {
+                  "description": "Bellingham, WA, United States",
+                },
+              ]
+            }
+            keyPrefix="react-autowhatever-1-"
+            onHighlightedItemChange={[Function]}
+            renderItem={[Function]}
+            renderItemData={
+              Object {
+                "query": "Bellingham",
+              }
+            }
+            sectionIndex={null}
+            theme={[Function]}
+          >
+            <ul
+              key="react-autowhatever-1-items-list"
+              role="listbox"
+              style={Object {}}
+            >
+              <Item
+                data-section-index={null}
+                data-suggestion-index={0}
+                id="react-autowhatever-1--item-0"
+                isHighlighted={false}
+                item={
+                  Object {
+                    "description": "Bellingham, WA, United States",
+                  }
+                }
+                itemIndex={0}
+                key="react-autowhatever-1-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onTouchStart={[Function]}
+                renderItem={[Function]}
+                renderItemData={
+                  Object {
+                    "query": "Bellingham",
+                  }
+                }
+                sectionIndex={null}
+                style={Object {}}
+              >
+                <li
+                  data-section-index={null}
+                  data-suggestion-index={0}
+                  id="react-autowhatever-1--item-0"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  onTouchStart={[Function]}
+                  role="option"
+                  style={Object {}}
+                >
+                  <withStyles(MenuItem)
+                    component="div"
+                    selected={false}
+                  >
+                    <MenuItem
+                      classes={
+                        Object {
+                          ".MuiMenuItem-root-20:focus": "MuiMenuItem-root-20:focus",
+                          ".MuiMenuItem-root-20:hover": "MuiMenuItem-root-20:hover",
+                          "root": "MuiMenuItem-root-20",
+                          "selected": "MuiMenuItem-selected-21",
+                        }
+                      }
+                      component="div"
+                      role="menuitem"
+                      selected={false}
+                    >
+                      <withStyles(ListItem)
+                        button={true}
+                        className="MuiMenuItem-root-20"
+                        component="div"
+                        role="menuitem"
+                        tabIndex={-1}
+                      >
+                        <ListItem
+                          button={true}
+                          className="MuiMenuItem-root-20"
+                          classes={
+                            Object {
+                              ".MuiListItem-button-30:hover": "MuiListItem-button-30:hover",
+                              ".MuiListItem-button-30:hover.MuiListItem-disabled-27": "MuiListItem-button-30:hover.MuiListItem-disabled-27",
+                              "button": "MuiListItem-button-30",
+                              "container": "MuiListItem-container-23",
+                              "default": "MuiListItem-default-25",
+                              "dense": "MuiListItem-dense-26",
+                              "disabled": "MuiListItem-disabled-27",
+                              "divider": "MuiListItem-divider-28",
+                              "gutters": "MuiListItem-gutters-29",
+                              "keyboardFocused": "MuiListItem-keyboardFocused-24",
+                              "root": "MuiListItem-root-22",
+                              "secondaryAction": "MuiListItem-secondaryAction-31",
+                            }
+                          }
+                          component="div"
+                          dense={false}
+                          disableGutters={false}
+                          disabled={false}
+                          divider={false}
+                          role="menuitem"
+                          tabIndex={-1}
+                        >
+                          <withStyles(ButtonBase)
+                            className="MuiListItem-root-22 MuiListItem-gutters-29 MuiListItem-button-30 MuiListItem-default-25 MuiMenuItem-root-20"
+                            component="div"
+                            disabled={false}
+                            keyboardFocusedClassName="MuiListItem-keyboardFocused-24"
+                            role="menuitem"
+                            tabIndex={-1}
+                          >
+                            <ButtonBase
+                              centerRipple={false}
+                              className="MuiListItem-root-22 MuiListItem-gutters-29 MuiListItem-button-30 MuiListItem-default-25 MuiMenuItem-root-20"
+                              classes={
+                                Object {
+                                  "disabled": "MuiButtonBase-disabled-33",
+                                  "root": "MuiButtonBase-root-32",
+                                }
+                              }
+                              component="div"
+                              disableRipple={false}
+                              disabled={false}
+                              focusRipple={false}
+                              keyboardFocusedClassName="MuiListItem-keyboardFocused-24"
+                              role="menuitem"
+                              tabIndex={-1}
+                              type="button"
+                            >
+                              <div
+                                className="MuiButtonBase-root-32 MuiListItem-root-22 MuiListItem-gutters-29 MuiListItem-button-30 MuiListItem-default-25 MuiMenuItem-root-20"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                role="menuitem"
+                                tabIndex={-1}
+                              >
+                                <div
+                                  key=".0"
+                                >
+                                  <strong
+                                    key="0"
+                                    style={
+                                      Object {
+                                        "fontWeight": 500,
+                                      }
+                                    }
+                                  >
+                                    Bellingham
+                                  </strong>
+                                  <span
+                                    key="1"
+                                    style={
+                                      Object {
+                                        "fontWeight": 300,
+                                      }
+                                    }
+                                  >
+                                    , WA, United States
+                                  </span>
+                                </div>
+                                <withStyles(TouchRipple)
+                                  center={false}
+                                  innerRef={[Function]}
+                                >
+                                  <TouchRipple
+                                    center={false}
+                                    classes={
+                                      Object {
+                                        "0%": "%",
+                                        "100%": "00%",
+                                        "50%": "0%",
+                                        "ripple": "MuiTouchRipple-ripple-38",
+                                        "rippleFast": "MuiTouchRipple-rippleFast-40",
+                                        "rippleVisible": "MuiTouchRipple-rippleVisible-39",
+                                        "root": "MuiTouchRipple-root-34",
+                                        "wrapper": "MuiTouchRipple-wrapper-35",
+                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-36",
+                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-37",
+                                      }
+                                    }
+                                  >
+                                    <TransitionGroup
+                                      childFactory={[Function]}
+                                      className="MuiTouchRipple-root-34"
+                                      component="span"
+                                      enter={true}
+                                      exit={true}
+                                    >
+                                      <span
+                                        className="MuiTouchRipple-root-34"
+                                      />
+                                    </TransitionGroup>
+                                  </TouchRipple>
+                                </withStyles(TouchRipple)>
+                              </div>
+                            </ButtonBase>
+                          </withStyles(ButtonBase)>
+                        </ListItem>
+                      </withStyles(ListItem)>
+                    </MenuItem>
+                  </withStyles(MenuItem)>
+                </li>
+              </Item>
+            </ul>
+          </ItemsList>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <span
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <img
+              alt=""
+              src={Object {}}
+            />
+          </div>
+        </div>
+      </div>
+    </Autowhatever>
+  </Autosuggest>
+</MUIPlacesAutocomplete>
+`;
