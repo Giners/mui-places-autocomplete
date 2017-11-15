@@ -8,7 +8,7 @@
   },
   "author": "Chris Austin <caustin.adwan@gmail.com>",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "yarn test:mocha && yarn test:eslint",
     "test:mocha": "mocha --require babel-register --require ignore-styles --require test/setup-dom.js test/test.jsx",
