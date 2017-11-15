@@ -1,19 +1,20 @@
 # Features
 * Easy to use input for searching for places
 * Place suggestions displayed in realtime
-* Google Material Design styling provided by Material-UI
+* Google Material Design styling provided by next version of Material-UI (v1)
+* Thoroughly tested
 
 # Installation
 To install this component run the following command:
 
 ```
-yarn add mui-google-places 
+yarn add mui-places-autocomplete
 ```
 
 or
 
 ```
-npm install mui-google-places --save
+npm install mui-places-autocomplete --save
 ```
 
 # Setup
@@ -37,7 +38,7 @@ This component also has testing which makes use of the Places library in the Goo
 # Usage
 ```javascript
 import React from 'react'
-import MUIPlacesAutocomplete from 'mui-google-places'
+import MUIPlacesAutocomplete from 'mui-places-autocomplete'
 
 const Example = () => (<MUIPlacesAutocomplete />)
 
