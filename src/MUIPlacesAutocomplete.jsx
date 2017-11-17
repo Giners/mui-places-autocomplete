@@ -127,7 +127,11 @@ export class MUIPlacesAutocomplete extends React.Component {
     this.onChange = this.onChange.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    // After the component is mounted it is safe to create a new instance of the autocomplete
+    // service client. That's because at this point the Google Maps JavaScript API has been loaded.
+    // Also if we do it before the component is mounted (i.e. in 'componentWillMount()') we won't be
+    // safe to render on the server (SSR) as the 'window' object isn't available.
     this.autocompleteService = new window.google.maps.places.AutocompleteService()
   }
 

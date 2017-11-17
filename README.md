@@ -2,6 +2,7 @@
 * Easy to use input for searching for places
 * Place suggestions displayed in realtime
 * Google Material Design styling provided by next version of Material-UI (v1)
+* Safe to render on the server (SSR)
 * Thoroughly tested
 
 # Installation
