@@ -1,6 +1,6 @@
 {
   "name": "mui-places-autocomplete",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Material-UI React component that provides suggestions/autocompletes places using the Google Places API",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "autosuggest-highlight": "^3.1.0",
-    "material-ui": "1.0.0-beta.17",
+    "material-ui": "1.0.0-beta.21",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-autosuggest": "^9.3.2",

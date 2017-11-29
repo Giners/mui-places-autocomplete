@@ -182,19 +182,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
-                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
-                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
-                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
-                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
-                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
-                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
-                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
-                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
-                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
-                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
-                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
-                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
                         "disabled": "MuiInput-disabled-11",
                         "error": "MuiInput-error-8",
                         "focused": "MuiInput-focused-12",
@@ -207,16 +194,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                         "inputMultiline": "MuiInput-inputMultiline-18",
                         "inputSearch": "MuiInput-inputSearch-17",
                         "inputSingleline": "MuiInput-inputSingleline-16",
-                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
                         "multiline": "MuiInput-multiline-14",
                         "root": "MuiInput-root-5",
                         "underline": "MuiInput-underline-13",
@@ -485,19 +462,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
-                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
-                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
-                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
-                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
-                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
-                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
-                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
-                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
-                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
-                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
-                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
-                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
                         "disabled": "MuiInput-disabled-11",
                         "error": "MuiInput-error-8",
                         "focused": "MuiInput-focused-12",
@@ -510,16 +474,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                         "inputMultiline": "MuiInput-inputMultiline-18",
                         "inputSearch": "MuiInput-inputSearch-17",
                         "inputSingleline": "MuiInput-inputSingleline-16",
-                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
                         "multiline": "MuiInput-multiline-14",
                         "root": "MuiInput-root-5",
                         "underline": "MuiInput-underline-13",
@@ -660,8 +614,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     <MenuItem
                       classes={
                         Object {
-                          ".MuiMenuItem-root-20:focus": "MuiMenuItem-root-20:focus",
-                          ".MuiMenuItem-root-20:hover": "MuiMenuItem-root-20:hover",
                           "root": "MuiMenuItem-root-20",
                           "selected": "MuiMenuItem-selected-21",
                         }
@@ -682,8 +634,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           className="MuiMenuItem-root-20"
                           classes={
                             Object {
-                              ".MuiListItem-button-30:hover": "MuiListItem-button-30:hover",
-                              ".MuiListItem-button-30:hover.MuiListItem-disabled-27": "MuiListItem-button-30:hover.MuiListItem-disabled-27",
                               "button": "MuiListItem-button-30",
                               "container": "MuiListItem-container-23",
                               "default": "MuiListItem-default-25",
@@ -778,9 +728,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                                     center={false}
                                     classes={
                                       Object {
-                                        "0%": "%",
-                                        "100%": "00%",
-                                        "50%": "0%",
                                         "ripple": "MuiTouchRipple-ripple-38",
                                         "rippleFast": "MuiTouchRipple-rippleFast-40",
                                         "rippleVisible": "MuiTouchRipple-rippleVisible-39",
@@ -1023,19 +970,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
-                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
-                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
-                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
-                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
-                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
-                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
-                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
-                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
-                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
-                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
-                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
-                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
                         "disabled": "MuiInput-disabled-11",
                         "error": "MuiInput-error-8",
                         "focused": "MuiInput-focused-12",
@@ -1048,16 +982,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                         "inputMultiline": "MuiInput-inputMultiline-18",
                         "inputSearch": "MuiInput-inputSearch-17",
                         "inputSingleline": "MuiInput-inputSingleline-16",
-                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
                         "multiline": "MuiInput-multiline-14",
                         "root": "MuiInput-root-5",
                         "underline": "MuiInput-underline-13",
@@ -1326,19 +1250,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        ".MuiInput-error-8:after": "MuiInput-error-8:after",
-                        ".MuiInput-inkbar-7.MuiInput-focused-12:after": "MuiInput-inkbar-7.MuiInput-focused-12:after",
-                        ".MuiInput-inkbar-7:after": "MuiInput-inkbar-7:after",
-                        ".MuiInput-input-9:-ms-input-placeholder": "MuiInput-input-9:-ms-input-placeholder",
-                        ".MuiInput-input-9::-moz-placeholder": "MuiInput-input-9::-moz-placeholder",
-                        ".MuiInput-input-9::-ms-input-placeholder": "MuiInput-input-9::-ms-input-placeholder",
-                        ".MuiInput-input-9::-webkit-input-placeholder": "MuiInput-input-9::-webkit-input-placeholder",
-                        ".MuiInput-input-9::-webkit-search-decoration": "MuiInput-input-9::-webkit-search-decoration",
-                        ".MuiInput-input-9:focus": "MuiInput-input-9:focus",
-                        ".MuiInput-input-9:invalid": "MuiInput-input-9:invalid",
-                        ".MuiInput-underline-13.MuiInput-disabled-11:before": "MuiInput-underline-13.MuiInput-disabled-11:before",
-                        ".MuiInput-underline-13:before": "MuiInput-underline-13:before",
-                        ".MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before": "MuiInput-underline-13:hover:not(.MuiInput-disabled-11):before",
                         "disabled": "MuiInput-disabled-11",
                         "error": "MuiInput-error-8",
                         "focused": "MuiInput-focused-12",
@@ -1351,16 +1262,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                         "inputMultiline": "MuiInput-inputMultiline-18",
                         "inputSearch": "MuiInput-inputSearch-17",
                         "inputSingleline": "MuiInput-inputSingleline-16",
-                        "label + .MuiInput-formControl-6": "abel + .MuiInput-formControl-6",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9::-webkit-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus:-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-moz-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-ms-input-placeholder",
-                        "label[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder": "abel[data-shrink=false] + .MuiInput-formControl-6 .MuiInput-input-9:focus::-webkit-input-placeholder",
                         "multiline": "MuiInput-multiline-14",
                         "root": "MuiInput-root-5",
                         "underline": "MuiInput-underline-13",
@@ -1501,8 +1402,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     <MenuItem
                       classes={
                         Object {
-                          ".MuiMenuItem-root-20:focus": "MuiMenuItem-root-20:focus",
-                          ".MuiMenuItem-root-20:hover": "MuiMenuItem-root-20:hover",
                           "root": "MuiMenuItem-root-20",
                           "selected": "MuiMenuItem-selected-21",
                         }
@@ -1523,8 +1422,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           className="MuiMenuItem-root-20"
                           classes={
                             Object {
-                              ".MuiListItem-button-30:hover": "MuiListItem-button-30:hover",
-                              ".MuiListItem-button-30:hover.MuiListItem-disabled-27": "MuiListItem-button-30:hover.MuiListItem-disabled-27",
                               "button": "MuiListItem-button-30",
                               "container": "MuiListItem-container-23",
                               "default": "MuiListItem-default-25",
@@ -1619,9 +1516,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                                     center={false}
                                     classes={
                                       Object {
-                                        "0%": "%",
-                                        "100%": "00%",
-                                        "50%": "0%",
                                         "ripple": "MuiTouchRipple-ripple-38",
                                         "rippleFast": "MuiTouchRipple-rippleFast-40",
                                         "rippleVisible": "MuiTouchRipple-rippleVisible-39",
