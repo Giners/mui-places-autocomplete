@@ -182,21 +182,21 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        "disabled": "MuiInput-disabled-11",
+                        "disabled": "MuiInput-disabled-9",
                         "error": "MuiInput-error-8",
-                        "focused": "MuiInput-focused-12",
+                        "focused": "MuiInput-focused-10",
                         "formControl": "MuiInput-formControl-6",
-                        "fullWidth": "MuiInput-fullWidth-19",
+                        "fullWidth": "MuiInput-fullWidth-13",
                         "inkbar": "MuiInput-inkbar-7",
-                        "input": "MuiInput-input-9",
-                        "inputDense": "MuiInput-inputDense-10",
-                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "input": "MuiInput-input-14",
+                        "inputDense": "MuiInput-inputDense-15",
+                        "inputDisabled": "MuiInput-inputDisabled-16",
                         "inputMultiline": "MuiInput-inputMultiline-18",
-                        "inputSearch": "MuiInput-inputSearch-17",
-                        "inputSingleline": "MuiInput-inputSingleline-16",
-                        "multiline": "MuiInput-multiline-14",
+                        "inputSearch": "MuiInput-inputSearch-19",
+                        "inputSingleline": "MuiInput-inputSingleline-17",
+                        "multiline": "MuiInput-multiline-12",
                         "root": "MuiInput-root-5",
-                        "underline": "MuiInput-underline-13",
+                        "underline": "MuiInput-underline-11",
                       }
                     }
                     defaultValue={undefined}
@@ -226,7 +226,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       aria-expanded={false}
                       aria-haspopup={false}
                       aria-owns="react-autowhatever-1"
-                      className="MuiInput-root-5 MuiInput-focused-12 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      className="MuiInput-root-5 MuiInput-focused-10 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-11"
                       onBlur={[Function]}
                       onFocus={[Function]}
                       role="combobox"
@@ -235,7 +235,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       <input
                         autoComplete="off"
                         autoFocus={true}
-                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        className="MuiInput-input-14 MuiInput-inputSingleline-17"
                         defaultValue={undefined}
                         disabled={false}
                         id={undefined}
@@ -462,21 +462,21 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        "disabled": "MuiInput-disabled-11",
+                        "disabled": "MuiInput-disabled-9",
                         "error": "MuiInput-error-8",
-                        "focused": "MuiInput-focused-12",
+                        "focused": "MuiInput-focused-10",
                         "formControl": "MuiInput-formControl-6",
-                        "fullWidth": "MuiInput-fullWidth-19",
+                        "fullWidth": "MuiInput-fullWidth-13",
                         "inkbar": "MuiInput-inkbar-7",
-                        "input": "MuiInput-input-9",
-                        "inputDense": "MuiInput-inputDense-10",
-                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "input": "MuiInput-input-14",
+                        "inputDense": "MuiInput-inputDense-15",
+                        "inputDisabled": "MuiInput-inputDisabled-16",
                         "inputMultiline": "MuiInput-inputMultiline-18",
-                        "inputSearch": "MuiInput-inputSearch-17",
-                        "inputSingleline": "MuiInput-inputSingleline-16",
-                        "multiline": "MuiInput-multiline-14",
+                        "inputSearch": "MuiInput-inputSearch-19",
+                        "inputSingleline": "MuiInput-inputSingleline-17",
+                        "multiline": "MuiInput-multiline-12",
                         "root": "MuiInput-root-5",
-                        "underline": "MuiInput-underline-13",
+                        "underline": "MuiInput-underline-11",
                       }
                     }
                     defaultValue={undefined}
@@ -506,7 +506,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       aria-expanded={true}
                       aria-haspopup={true}
                       aria-owns="react-autowhatever-1"
-                      className="MuiInput-root-5 MuiInput-focused-12 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      className="MuiInput-root-5 MuiInput-focused-10 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-11"
                       onBlur={[Function]}
                       onFocus={[Function]}
                       role="combobox"
@@ -515,7 +515,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       <input
                         autoComplete="off"
                         autoFocus={true}
-                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        className="MuiInput-input-14 MuiInput-inputSingleline-17"
                         defaultValue={undefined}
                         disabled={false}
                         id={undefined}
@@ -970,21 +970,21 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        "disabled": "MuiInput-disabled-11",
+                        "disabled": "MuiInput-disabled-9",
                         "error": "MuiInput-error-8",
-                        "focused": "MuiInput-focused-12",
+                        "focused": "MuiInput-focused-10",
                         "formControl": "MuiInput-formControl-6",
-                        "fullWidth": "MuiInput-fullWidth-19",
+                        "fullWidth": "MuiInput-fullWidth-13",
                         "inkbar": "MuiInput-inkbar-7",
-                        "input": "MuiInput-input-9",
-                        "inputDense": "MuiInput-inputDense-10",
-                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "input": "MuiInput-input-14",
+                        "inputDense": "MuiInput-inputDense-15",
+                        "inputDisabled": "MuiInput-inputDisabled-16",
                         "inputMultiline": "MuiInput-inputMultiline-18",
-                        "inputSearch": "MuiInput-inputSearch-17",
-                        "inputSingleline": "MuiInput-inputSingleline-16",
-                        "multiline": "MuiInput-multiline-14",
+                        "inputSearch": "MuiInput-inputSearch-19",
+                        "inputSingleline": "MuiInput-inputSingleline-17",
+                        "multiline": "MuiInput-multiline-12",
                         "root": "MuiInput-root-5",
-                        "underline": "MuiInput-underline-13",
+                        "underline": "MuiInput-underline-11",
                       }
                     }
                     defaultValue={undefined}
@@ -1014,7 +1014,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       aria-expanded={false}
                       aria-haspopup={false}
                       aria-owns="react-autowhatever-1"
-                      className="MuiInput-root-5 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      className="MuiInput-root-5 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-11"
                       onBlur={[Function]}
                       onFocus={[Function]}
                       role="combobox"
@@ -1023,7 +1023,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       <input
                         autoComplete="off"
                         autoFocus={true}
-                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        className="MuiInput-input-14 MuiInput-inputSingleline-17"
                         defaultValue={undefined}
                         disabled={false}
                         id={undefined}
@@ -1250,21 +1250,21 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     className={undefined}
                     classes={
                       Object {
-                        "disabled": "MuiInput-disabled-11",
+                        "disabled": "MuiInput-disabled-9",
                         "error": "MuiInput-error-8",
-                        "focused": "MuiInput-focused-12",
+                        "focused": "MuiInput-focused-10",
                         "formControl": "MuiInput-formControl-6",
-                        "fullWidth": "MuiInput-fullWidth-19",
+                        "fullWidth": "MuiInput-fullWidth-13",
                         "inkbar": "MuiInput-inkbar-7",
-                        "input": "MuiInput-input-9",
-                        "inputDense": "MuiInput-inputDense-10",
-                        "inputDisabled": "MuiInput-inputDisabled-15",
+                        "input": "MuiInput-input-14",
+                        "inputDense": "MuiInput-inputDense-15",
+                        "inputDisabled": "MuiInput-inputDisabled-16",
                         "inputMultiline": "MuiInput-inputMultiline-18",
-                        "inputSearch": "MuiInput-inputSearch-17",
-                        "inputSingleline": "MuiInput-inputSingleline-16",
-                        "multiline": "MuiInput-multiline-14",
+                        "inputSearch": "MuiInput-inputSearch-19",
+                        "inputSingleline": "MuiInput-inputSingleline-17",
+                        "multiline": "MuiInput-multiline-12",
                         "root": "MuiInput-root-5",
-                        "underline": "MuiInput-underline-13",
+                        "underline": "MuiInput-underline-11",
                       }
                     }
                     defaultValue={undefined}
@@ -1294,7 +1294,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       aria-expanded={true}
                       aria-haspopup={true}
                       aria-owns="react-autowhatever-1"
-                      className="MuiInput-root-5 MuiInput-focused-12 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-13"
+                      className="MuiInput-root-5 MuiInput-focused-10 MuiInput-formControl-6 MuiInput-inkbar-7 MuiInput-underline-11"
                       onBlur={[Function]}
                       onFocus={[Function]}
                       role="combobox"
@@ -1303,7 +1303,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       <input
                         autoComplete="off"
                         autoFocus={true}
-                        className="MuiInput-input-9 MuiInput-inputSingleline-16"
+                        className="MuiInput-input-14 MuiInput-inputSingleline-17"
                         defaultValue={undefined}
                         disabled={false}
                         id={undefined}
