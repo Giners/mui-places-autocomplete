@@ -1,3 +1,6 @@
+# MUIPlacesAutocomplete
+[![Travis CI](https://img.shields.io/travis/Giners/mui-places-autocomplete/master.svg)](https://travis-ci.org/Giners/mui-places-autocomplete/builds)
+
 # Features
 * Easy to use input for searching for places
 * Place suggestions displayed in realtime
@@ -9,14 +12,16 @@
 To install this component run the following command:
 
 ```
-yarn add mui-places-autocomplete
+yarn add mui-places-autocomplete --ignore-scripts
 ```
 
 or
 
 ```
-npm install mui-places-autocomplete --save
+npm install mui-places-autocomplete --save --ignore-scripts
 ```
+
+Note that if you exclude the `--ignore-scripts` option when installing a package then the `prepublish` script in `package.json` is ran after installing locally. Tests are ran as part of the `prepublish` script and they will fail if you haven't yet set a Google API key to the enivronment variable `GOOGLE_API_KEY` (see setup section).
 
 # Setup
 This component relies on some basic setup before usage. It makes use of services provided by Google. To properly make use of the services you will need to do three things:
