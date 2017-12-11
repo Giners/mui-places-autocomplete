@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "8"
+cache: yarn
+install:
+  # Per docs the 'prepublish' script is ran after a local install:
+  # https://docs.npmjs.com/misc/scripts
+  # 
+  # Have yarn install our dependencies and not run any scripts after install with the
+  # '--ignore-scripts' flag. This will help us reduce the CI build time by not running the tests
+  # multiple times. In the 'script' step in the CI build lifecycle we can just run the 'prepublish'
+  # script.
+  - yarn install --ignore-scripts
+script:
+  - yarn prepublish
+after_success:
+  - yarn semantic-release
