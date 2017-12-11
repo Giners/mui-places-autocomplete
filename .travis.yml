@@ -13,3 +13,5 @@ install:
   - yarn install --ignore-scripts
 script:
   - yarn prepublish
+after_success:
+  - yarn semantic-release
