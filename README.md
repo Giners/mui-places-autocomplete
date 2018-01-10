@@ -74,4 +74,4 @@ This was my first open-source project that I undertook while I was teaching myse
 * Overview and examples for the Autocomplete features in the Places library: https://developers.google.com/maps/documentation/javascript/places-autocomplete
 
 # License
-MIT
+[MIT](https://gine.mit-license.org/)
