@@ -1,3 +1,3 @@
-import MUIPlacesAutocompleteHOC from './MUIPlacesAutocomplete'
+import MUIPlacesAutocomplete from './MUIPlacesAutocomplete'
 
-export default MUIPlacesAutocompleteHOC
+export default MUIPlacesAutocomplete
