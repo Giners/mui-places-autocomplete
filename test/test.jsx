@@ -15,7 +15,7 @@ import React from 'react'
 // Code under test
 import MUIPlacesAutocomplete from './../src'
 
-// Supporting code
+// Supporting test code
 import getACServiceClassDef from './testHelper'
 
 // Configure Chai to work with Jest
@@ -155,6 +155,28 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
       expect(mpaWrapper.find('MenuList').length).to.equal(0)
     })
 
+    it('Duplicate suggestions aren\'t rendered', function () {
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the state of our component to provide duplicate suggestions as if they were
+      // returned from the Google AutocompleteService...
+      const expectedSuggestion = { description: 'Bellingham, WA, United States' }
+      const expectedSuggestionCount = 1
+
+      mpaWrapper.setState({ suggestions: [expectedSuggestion, expectedSuggestion] })
+
+      // Now check that our suggestions are uniquely rendered...
+      expect(mpaWrapper.find('MenuItem').length).to.equal(expectedSuggestionCount)
+      expect(mpaWrapper.find('MenuItem').text()).to.equal(expectedSuggestion.description)
+
+      // Snapshot test only the <MenuList> of our suggestions as the <Downshift>/<Popper> components
+      // that our <MUIPlacesAutocomplete> component composes is massive and takes to long to diff
+      // the serializations.
+      expect(getMenuListJSON()).to.matchSnapshot()
+    })
+
     it('Google logo is present in a populated list of suggestions', function () {
       // To get suggestions to be rendered first simulate an input onChange event which will cause
       // <Downshift> to believe that our autocomplete/dropdown is open...
@@ -182,7 +204,7 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
       // Find the 'input' element so we can simulate an event for changing the input which will
       // cause our component to get place predictions with the Google Maps API and ultimately update
       // its state with place suggestions. Before doing so setup our test callback so we can assert
-      // that suggestions have been populated and signal that we have completed the test.
+      // that suggestions have been populated.
       const testCallback = () => {
         try {
           expect(mpaWrapper.state().suggestions).to.not.be.empty

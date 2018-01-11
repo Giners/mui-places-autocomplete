@@ -41,8 +41,15 @@ export default class MUIPlacesAutocomplete extends React.Component {
       return null
     }
 
+    // The autocomplete service can return multiple of the same predictions. This can sometimes be
+    // seen after someone selects a suggestion and starts to delete/backspace the input value which
+    // contains their selected suggestion. Here we will ensure uniqueness amongst suggestions using
+    // an ES6 Map so that we don't get duplicate key errors when we render our suggestions.
+    const uniqueSuggestions =
+      new Map(suggestions.map(({ description }) => [description, { description }]))
+
     const renderedSuggestions =
-      MUIPlacesAutocomplete.renderSuggestions(suggestions, downshiftRenderProps)
+      MUIPlacesAutocomplete.renderSuggestions([...uniqueSuggestions.values()], downshiftRenderProps)
 
     // On the <Popper> component we enable the 'inner' modifier. This is needed as Popper JS will
     // try to change the position of the popover depending on if it deems the popover is in or out
@@ -190,23 +197,9 @@ export default class MUIPlacesAutocomplete extends React.Component {
           return
         }
 
-        // The autocomplete service can return multiple of the same predictions. This can sometimes
-        // be seen after someone selects a suggestion and starts to delete/backspace the input value
-        // which contains their selected suggestion. Here we will ensure uniqueness amongst
-        // suggestions using an ES6 Map so that we don't get duplicate key errors when we render our
-        // suggestions. We decided to do this here vs. in the render functions as we only need to do
-        // it once here vs. having to do it many times due to, say, a re-render from the user
-        // mousing over the different suggestions which causes the highlighted index to change.
-        //
-        // The 'Map' constructor takes an array/other iterable object whose elements are KvPs. For
-        // arrays it contains arrays of two elements (e.g. [['someKey', 'someValue']]). Build a new
-        // array of out the predictions that provides arrays of KvPs and use it in the 'Map'
-        // constructor.
-        const suggestionsMap = new Map(predictions.map(({ description }) =>
-          [description, { description }]))
+        const suggestions = predictions.map(({ description }) => ({ description }))
 
-        // Now spread the iterable of the values of the suggestions map into a new array...
-        this.setState({ suggestions: [...suggestionsMap.values()] })
+        this.setState({ suggestions })
       },
     )
   }
