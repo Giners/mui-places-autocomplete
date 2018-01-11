@@ -73,7 +73,7 @@ This component also has testing which makes use of the Places library in the Goo
 
 | Prop | Type | Required | Description |
 | :--- | :--- | :---: | :--- |
-| [`renderTarget`] | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
+| `renderTarget` | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
 
 # Feedback
 This was my first open-source project that I undertook while I was teaching myself full-stack development (JS (ES6)/HTML/CSS, Node, Express, NoSQL (DynamoDB), GraphQL, React, Redux, Material-UI, etc.). I'm very interested in taking feedback to either improve my skills (i.e. correct errors :)) or to make this component more useful in general/for your use case. Please feel free to provide feedback by opening an issue or messaging me.
