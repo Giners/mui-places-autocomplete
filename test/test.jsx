@@ -13,9 +13,9 @@ import toJson from 'enzyme-to-json'
 import React from 'react'
 
 // Code under test
-import { MUIPlacesAutocomplete } from './../src/MUIPlacesAutocomplete'
+import MUIPlacesAutocomplete from './../src'
 
-// Supporting code
+// Supporting test code
 import getACServiceClassDef from './testHelper'
 
 // Configure Chai to work with Jest
@@ -42,6 +42,21 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
     // component that will be under test
     let mpaWrapper = null
 
+    // Helper function to get the JSON of the <MenuList> component in our <MUIPlacesAutocomplete>
+    // component. Useful for snapshot testing only the components that we are in charge of
+    // rendering (i.e. the suggestions).
+    const getMenuListJSON = () => {
+      expect(mpaWrapper).to.not.be.null
+
+      const mlWrapper = mpaWrapper.find('MenuList')
+
+      // Make sure we have a wrapper around a <MenuList> and only a single <MenuList>
+      expect(mlWrapper).to.not.be.null
+      expect(mlWrapper.length).to.equal(1)
+
+      return toJson(mlWrapper)
+    }
+
     before('"Load" the Google Maps JavaScript API on \'window\'', function () {
       // These tests depend on a DOM to be setup for more indepth tests that either do full DOM
       // rendering or for leveraging DOM APIs. At this point we presume that the DOM has been setup
@@ -49,7 +64,7 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
       expect(global.window).to.exist
 
       // The <MUIPlacesAutocomplete> component expects the Google Maps JavaScript API to be loaded
-      // in the 'window' object. Since we aren't loading it we mock our the API and add it to the
+      // in the 'window' object. Since we aren't loading it we mock out the API and add it to the
       // 'window' object.
       global.window.google = {
         maps: {
@@ -70,77 +85,115 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
     })
 
     beforeEach('Setup Enzyme wrapper', function () {
-      // Since we aren't testing the MUIPlacesAutocomplete HOC (see MUI 'withStyles()') we provide
-      // an empty object for the MUI styling/classes that would normally get applied so we don't try
-      // to reference an undefined prop.
-      mpaWrapper = mount(<MUIPlacesAutocomplete classes={{ }} />)
+      mpaWrapper = mount(<MUIPlacesAutocomplete renderTarget={() => (<div />)} />)
 
       expect(mpaWrapper).to.not.be.null
     })
 
     it('Initial state', function () {
-      expect(mpaWrapper.state().value).to.exist
-      expect(mpaWrapper.state().value).to.be.empty
       expect(mpaWrapper.state().suggestions).to.exist
       expect(mpaWrapper.state().suggestions).to.be.empty
 
-      // Protect us from forgetting to update this test if we add an additional key to the
-      // components state. We currently only expect the 'value' and 'suggestions' key...
-      expect(Object.keys(mpaWrapper.state()).length).to.equal(2)
+      // Protect us from forgetting to update this test if we add an additional key(s) to the
+      // components state. We currently only expect the 'suggestions' key...
+      expect(Object.keys(mpaWrapper.state()).length).to.equal(1)
 
-      // We snapshot the initial state to provide visibility to any changes we have made to our
-      // component...
-      expect(toJson(mpaWrapper)).to.matchSnapshot()
+      // We don't snapshot test our component since 1) the <Downshift>/<Popper> components that our
+      // <MUIPlacesAutocomplete> component composes is massive and takes long to diff the
+      // serializations and 2) our container ought not be open anyway. We can verify that the
+      // suggestions container isn't open by searching for the <MenuList> component.
+      expect(mpaWrapper.find('MenuList').length).to.equal(0)
     })
 
     it('Suggestions rendered from \'suggestions\' state', function () {
-      // Provide a search input and a suggestion to our state so a suggestion is rendered
-      mpaWrapper.setState({
-        value: searchInputValue,
-        suggestions: [{ description: 'Bellingham, WA, United States' }],
-      })
-      mpaWrapper.find('input').simulate('focus')
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
 
-      expect(mpaWrapper.state().suggestions.length).to.equal(1)
-      expect(mpaWrapper.find('MenuItem').length).to.equal(mpaWrapper.state().suggestions.length)
+      // Second set the state of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      const expectedSuggestion = { description: 'Bellingham, WA, United States' }
+      const expectedSuggestionCount = 1
 
-      expect(toJson(mpaWrapper)).to.matchSnapshot()
+      mpaWrapper.setState({ suggestions: [expectedSuggestion] })
+
+      // Now check that our suggestions are rendered...
+      expect(mpaWrapper.find('MenuItem').length).to.equal(expectedSuggestionCount)
+      expect(mpaWrapper.find('MenuItem').text()).to.equal(expectedSuggestion.description)
+
+      // Snapshot test only the <MenuList> of our suggestions as the <Downshift>/<Popper> components
+      // that our <MUIPlacesAutocomplete> component composes is massive and takes to long to diff
+      // the serializations.
+      expect(getMenuListJSON()).to.matchSnapshot()
     })
 
     it('Empty input renders no suggestions after previous ones rendered', function () {
-      // Make sure we aren't asserting an empty list of suggestions in the first place after
-      // focusing the 'input' element...
-      mpaWrapper.setState({
-        value: searchInputValue,
-        suggestions: [{ description: 'Bellingham, WA, United States' }],
-      })
-      mpaWrapper.find('input').simulate('focus')
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
 
-      expect(mpaWrapper.state().suggestions.length).to.equal(1)
-      expect(mpaWrapper.find('MenuItem').length).to.equal(mpaWrapper.state().suggestions.length)
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      const expectedSuggestion = { description: 'Bellingham, WA, United States' }
+      let expectedSuggestionCount = 1
 
-      // Now check that we no longer render suggestions on empty input...
+      mpaWrapper.setState({ suggestions: [expectedSuggestion] })
+
+      // Now check that our suggestions are rendered...
+      expect(mpaWrapper.find('MenuItem').length).to.equal(expectedSuggestionCount)
+      expect(mpaWrapper.find('MenuItem').text()).to.equal(expectedSuggestion.description)
+
+      // Now clear the input and check that no suggestions are rendered...
       mpaWrapper.find('input').simulate('change', { target: { value: '' } })
 
-      expect(mpaWrapper.state().value).to.be.empty
-      expect(mpaWrapper.state().suggestions).to.be.empty
-      expect(mpaWrapper.find('MenuItem').length).to.equal(0)
+      expectedSuggestionCount = 0
 
-      expect(toJson(mpaWrapper)).to.matchSnapshot()
+      expect(mpaWrapper.find('MenuItem').length).to.equal(expectedSuggestionCount)
+
+      // We don't snapshot test since our suggestions container ought not be open. We can verify it
+      // isn't by searching for the <MenuList> component
+      expect(mpaWrapper.find('MenuList').length).to.equal(0)
+    })
+
+    it('Duplicate suggestions aren\'t rendered', function () {
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the state of our component to provide duplicate suggestions as if they were
+      // returned from the Google AutocompleteService...
+      const expectedSuggestion = { description: 'Bellingham, WA, United States' }
+      const expectedSuggestionCount = 1
+
+      mpaWrapper.setState({ suggestions: [expectedSuggestion, expectedSuggestion] })
+
+      // Now check that our suggestions are uniquely rendered...
+      expect(mpaWrapper.find('MenuItem').length).to.equal(expectedSuggestionCount)
+      expect(mpaWrapper.find('MenuItem').text()).to.equal(expectedSuggestion.description)
+
+      // Snapshot test only the <MenuList> of our suggestions as the <Downshift>/<Popper> components
+      // that our <MUIPlacesAutocomplete> component composes is massive and takes to long to diff
+      // the serializations.
+      expect(getMenuListJSON()).to.matchSnapshot()
     })
 
     it('Google logo is present in a populated list of suggestions', function () {
-      // Provide a search input and a suggestion to our state so we can render the suggestions
-      // container which will have the Google Logo in a single <img> element
-      mpaWrapper.setState({
-        value: searchInputValue,
-        suggestions: [{ description: 'Bellingham, WA, United States' }],
-      })
-      mpaWrapper.find('input').simulate('focus')
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
 
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      // Now check that our image is rendered...
       expect(mpaWrapper.find('img').length).to.equal(1)
 
-      expect(toJson(mpaWrapper)).to.matchSnapshot()
+      // Snapshot test only the <MenuList> of our suggestions as the <Downshift>/<Popper> components
+      // that our <MUIPlacesAutocomplete> component composes is massive and takes to long to diff
+      // the serializations.
+      expect(getMenuListJSON()).to.matchSnapshot()
     })
   })
 
@@ -151,10 +204,9 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
       // Find the 'input' element so we can simulate an event for changing the input which will
       // cause our component to get place predictions with the Google Maps API and ultimately update
       // its state with place suggestions. Before doing so setup our test callback so we can assert
-      // that suggestions have been populated and signal that we have completed the test.
+      // that suggestions have been populated.
       const testCallback = () => {
         try {
-          expect(mpaWrapper.state().value).to.equal(searchInputValue)
           expect(mpaWrapper.state().suggestions).to.not.be.empty
         } catch (e) {
           done(e)
@@ -187,10 +239,11 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
 
       // Now mount our component to make use of our mock API when we send a 'change' event on our
       // 'input' element
-      mpaWrapper = mount(<MUIPlacesAutocomplete classes={{ }} />)
+      mpaWrapper = mount(<MUIPlacesAutocomplete renderTarget={() => (<div />)} />)
 
       const inputWrapper = mpaWrapper.find('input')
 
+      inputWrapper.simulate('focus')
       inputWrapper.simulate('change', { target: { value: searchInputValue } })
     })
   })

@@ -1,99 +1,137 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Autosuggest from 'react-autosuggest'
-import { MenuItem } from 'material-ui/Menu'
+import Grow from 'material-ui/transitions/Grow'
+import { MenuList, MenuItem } from 'material-ui/Menu'
+import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
-import { withStyles } from 'material-ui/styles'
+import Downshift from 'downshift'
+import { Manager, Target, Popper } from 'react-popper'
 import match from 'autosuggest-highlight/match'
 import parse from 'autosuggest-highlight/parse'
 
 import googleLogo from './images/google-logo-on-white-bg.png'
 
-// These MUI styles will be applied as the 'theme' to the <Autosuggest> component which comes with
-// no styles. For info on styling the <Autosuggest> component see:
-// https://github.com/moroshko/react-autosuggest#theme-optional
-const styles = theme => ({
-  container: {
-    flexGrow: 1,
-    position: 'relative',
-    height: 200,
-  },
-  suggestionsContainerOpen: {
-    position: 'absolute',
-    marginTop: theme.spacing.unit,
-    marginBottom: theme.spacing.unit * 3,
-    left: 0,
-    right: 0,
-  },
-  suggestion: {
-    display: 'block',
-  },
-  suggestionsList: {
-    margin: 0,
-    padding: 0,
-    listStyleType: 'none',
-  },
-  textField: {
-    width: '100%',
-  },
-})
+export default class MUIPlacesAutocomplete extends React.Component {
+  // Renders the container that will hold the suggestions and defers to other methods to render the
+  // suggestions themselves. This method should only be called if you do indeed plan on rendering
+  // the suggestions. In our case this is when 'isOpen' Downshift render prop is 'true'. Thats
+  // because the methods that are used to render the suggestions invoke the 'getItemProps' prop
+  // getter from Downshift which is an impure function. In otherwords even if you don't render the
+  // suggestions container Downshift will still think we are rendering suggestions.
+  //
+  // The 'downshiftRenderProps' argument expects an object of props that Downshift passes to the
+  // function which is set as the value of the 'render' prop on the <Downshift> component. Currently
+  // the following Downshift render props are expected on the value provided to the
+  // 'downshiftRenderProps' argument:
+  // * getItemProps - function that returns the props that ought to be applied to menu item elements
+  // that are rendered
+  // * inputValue - current value of the controlled <input> element
+  // * highlightedIndex - index of the currently highlighted menu item elements that have been
+  // rendered
+  static renderSuggestionsContainer(suggestions, downshiftRenderProps) {
+    // Return null here if there are no suggestions to render. If we don't we will show a little box
+    // that is empty and popped over the render target. This handles the case where a suggestion is
+    // selected, the input value is updated, and then the user deletes the input value. This
+    // behavior is attributed to setting the suggestions to the empty array in the
+    // 'onInputValueChange' method.
+    //
+    // Be sure we return null here before we render any of our suggestions lest we invoke the impure
+    // 'getItemProps' function.
+    if (suggestions.length === 0) {
+      return null
+    }
 
-// We export our component for testing purposes. For production use the default export from this
-// module.
-export class MUIPlacesAutocomplete extends React.Component {
-  static getSuggestionValue({ description }) {
-    return description
-  }
+    // The autocomplete service can return multiple of the same predictions. This can sometimes be
+    // seen after someone selects a suggestion and starts to delete/backspace the input value which
+    // contains their selected suggestion. Here we will ensure uniqueness amongst suggestions using
+    // an ES6 Map so that we don't get duplicate key errors when we render our suggestions.
+    const uniqueSuggestions =
+      new Map(suggestions.map(({ description }) => [description, { description }]))
 
-  static renderInputComponent({ classes, autoFocus, value, ref, ...other }) {
-    // The 'inputRef' prop takes a callback which has 1 argument which represents the DOM node for
-    // the <input> element. In this case 'ref' comes from the 'react-autowhatever' lib (which is
-    // used by the 'react-autosuggest' lib) and in this case it simply maintains a reference to the
-    // <input> DOM node for internal purposes.
+    const renderedSuggestions =
+      MUIPlacesAutocomplete.renderSuggestions([...uniqueSuggestions.values()], downshiftRenderProps)
+
+    // On the <Popper> component we enable the 'inner' modifier. This is needed as Popper JS will
+    // try to change the position of the popover depending on if it deems the popover is in or out
+    // of view. The result of enabling the 'inner' modifier means that the position of the popover
+    // won't change at all regardless of if the popover is in or out of view.
+    //
+    // Typically the <Popper> receives actual nodes for its children but in our case we opted to
+    // provided a function that creats a <div> with styles applied to it at the top-level. This
+    // <div> with the styles applied is to account for issues that arise when testing. Without it we
+    // will get the following warnings: NaN is an invalid value for the top/left css style property.
+    // This is because the DOM provider/implementation we use when testing (jsdom) doesn't return
+    // values for bounding client rect.
     return (
-      <TextField
-        className={classes.textField}
-        autoFocus={autoFocus}
-        value={value}
-        inputRef={ref}
-        InputProps={{
-          classes: { input: classes.input },
-          ...other,
-        }}
-      />
-    )
-  }
-
-  static renderSuggestionsContainer({ containerProps, children }) {
-    return (
-      <div {...containerProps}>
-        {children}
-        {children ? (
-          <div style={{ display: 'flex' }}>
-            <span style={{ flex: 1 }} />
-            <img src={googleLogo} alt="" />
+      <Popper
+        placement="top-start"
+        modifiers={({ inner: { enabled: true } })}
+        style={{ left: 0, right: 0 }}
+      >
+        {({ popperProps, restProps }) => (
+          <div
+            {...popperProps}
+            {...restProps}
+            style={{
+              ...popperProps.style,
+              top: popperProps.style.top || 0,
+              left: popperProps.style.left || 0,
+              ...restProps.style,
+            }}
+          >
+            <Grow in style={{ transformOrigin: '0 0 0' }}>
+              <Paper>
+                <MenuList>
+                  {renderedSuggestions}
+                  {renderedSuggestions.length > 0
+                      ? (
+                        <div style={{ display: 'flex' }}>
+                          <span style={{ flex: 1 }} />
+                          <img src={googleLogo} alt="" />
+                        </div>
+                        )
+                      : null}
+                </MenuList>
+              </Paper>
+            </Grow>
           </div>
-        ) : null}
-      </div>
+        )}
+      </Popper>
     )
   }
 
-  // Renders suggestions where they are highlighted based on the parts of the suggestion that match
-  // the query the user entered. This is inline with the Google Maps webapp at the time of writing.
-  // This behavior is opposite of how the Google Search bar/component/element works though.
-  static renderSuggestion({ description }, { query, isHighlighted }) {
-    // Calculate the chars to highlight in the suggestion 'description' based on the query that the
-    // user provided us. An array is returned and if any chars ought to be highlighted the array
-    // will contain a pair ([a, b]) which denote the indexes of chars to highlight (i.e.
-    // text.slice(a, b)).
-    const matches = match(description, query)
+  // Helper method to be called by 'renderSuggestionsContainer'. Returns list of rendered
+  // suggestions.
+  static renderSuggestions(suggestions, { getItemProps, inputValue, highlightedIndex }) {
+    return suggestions.map((suggestion, index) =>
+      MUIPlacesAutocomplete.renderSuggestion(
+        suggestion,
+        { getItemProps, inputValue, isHighlighted: index === highlightedIndex },
+      ))
+  }
+
+  // Helper method to be called by 'renderSuggestions'. Renders suggestions where they are
+  // highlighted based on the parts of the suggestion that match the query the user entered. This is
+  // inline with the Google Maps webapp at the time of writing. This behavior is opposite of how the
+  // Google Search bar/component/element works though.
+  static renderSuggestion({ description }, { getItemProps, inputValue, isHighlighted }) {
+    // Calculate the chars to highlight in the suggestion 'description' based on the query
+    // ('inputValue') that the user provided us. An array is returned and if any chars ought to be
+    // highlighted the array will contain a pair ([a, b]) which denote the indexes of chars to
+    // highlight (i.e. text.slice(a, b)).
+    const matches = match(description, inputValue)
 
     // Break up the suggestion 'description' based on the parts that matched. An array is returned
     // of parts where each one has an indication of if it ought to be highlighted or not.
     const parts = parse(description, matches)
 
     return (
-      <MenuItem selected={isHighlighted} component="div">
+      <MenuItem
+        {...getItemProps({ item: description })}
+        key={description}
+        selected={isHighlighted}
+        component="div"
+      >
         <div>
           {parts.map((part, index) => {
             if (part.highlight) {
@@ -120,11 +158,12 @@ export class MUIPlacesAutocomplete extends React.Component {
 
     // Control the <input> element/<Autosuggest> component and make this React component the source
     // of truth for their state.
-    this.state = { value: '', suggestions: [] }
+    this.state = {
+      suggestions: [],
+    }
 
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
-    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
-    this.onChange = this.onChange.bind(this)
+    this.onInputValueChange = this.onInputValueChange.bind(this)
+    this.renderAutocomplete = this.renderAutocomplete.bind(this)
   }
 
   componentDidMount() {
@@ -135,11 +174,23 @@ export class MUIPlacesAutocomplete extends React.Component {
     this.autocompleteService = new window.google.maps.places.AutocompleteService()
   }
 
-  onSuggestionsFetchRequested({ value }) {
+  // This function is called whenever Downshift detects that the input value, well, has changed.
+  // Although we only use a single argument in our function signature Downshift documents the
+  // function signature as:
+  // onInputValueChange(inputValue: string, stateAndHelpers: object)
+  onInputValueChange(inputValue) {
+    // If the inputs value is empty we can return as we will get an error if we provide the empty
+    // string when we perform a search. Set our suggestions to empty here as well so we don't render
+    // the old suggestions.
+    if (inputValue === '') {
+      this.setState({ suggestions: [] })
+      return
+    }
+
     this.autocompleteService.getPlacePredictions(
-      { input: value },
+      { input: inputValue },
       (predictions, serviceStatus) => {
-        // If the response doesn't contain a valid result then set our state as if not suggestions
+        // If the response doesn't contain a valid result then set our state as if no suggestions
         // were returned
         if (serviceStatus !== window.google.maps.places.PlacesServiceStatus.OK) {
           this.setState({ suggestions: [] })
@@ -153,65 +204,52 @@ export class MUIPlacesAutocomplete extends React.Component {
     )
   }
 
-  onSuggestionsClearRequested() {
-    this.setState({ suggestions: [] })
-  }
+  renderAutocomplete({
+    getInputProps,
+    getItemProps,
+    isOpen,
+    inputValue,
+    highlightedIndex,
+  }) {
+    const { suggestions } = this.state
+    const { renderTarget } = this.props
 
-  // Implementation of the 'onChange' event callback for the <input> element that is expected in the
-  // 'inputProps' prop passed to the <Autosuggest> component. The <Autosuggest> component expects
-  // the callback to have the following signature: function onChange(event, { newValue, method })
-  onChange(event, { newValue }) {
-    this.setState({ value: newValue })
+    // We set the value of 'tag' on the <Manager> component to false to allow the rendering of
+    // children instead of a specific DOM element.
+    //
+    // We only want to render our suggestions container if Downshift says we are open AND there are
+    // suggestions to actually
+    return (
+      <div>
+        <Manager tag={false}>
+          <TextField
+            {...getInputProps({
+              autoFocus: false,
+              placeholder: 'Search for a place',
+              fullWidth: true,
+            })}
+          />
+          <Target>{renderTarget()}</Target>
+          {isOpen ? MUIPlacesAutocomplete.renderSuggestionsContainer(
+                      suggestions,
+                      { getItemProps, inputValue, highlightedIndex },
+                      )
+                  : null}
+        </Manager>
+      </div>
+    )
   }
 
   render() {
-    const { suggestions, value } = this.state
-    const { classes } = this.props
-
-    // The following props are required for the <Autosuggest> component:
-    // * suggestions
-    // * getSuggestionValue
-    // * renderSuggestion
-    // * onSuggestionsFetchedRequested
-    // * onSuggestionsClearRequested
-    // * inputProps
-    //
-    // We supply the following props to give a MUI feel to our component
-    // * theme
-    // * renderInputComponent
-    // * renderSuggestionsContainer (for the Google logo)
-    // * renderSuggestion
     return (
-      <Autosuggest
-        suggestions={suggestions}
-        getSuggestionValue={MUIPlacesAutocomplete.getSuggestionValue}
-        renderInputComponent={MUIPlacesAutocomplete.renderInputComponent}
-        renderSuggestionsContainer={MUIPlacesAutocomplete.renderSuggestionsContainer}
-        renderSuggestion={MUIPlacesAutocomplete.renderSuggestion}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        inputProps={{
-          classes,
-          value,
-          onChange: this.onChange,
-          autoFocus: true,
-          placeholder: 'Search for a place',
-        }}
-        theme={{
-          container: classes.container,
-          suggestionsContainerOpen: classes.suggestionsContainerOpen,
-          suggestionsList: classes.suggestionsList,
-          suggestion: classes.suggestion,
-        }}
+      <Downshift
+        onInputValueChange={this.onInputValueChange}
+        render={this.renderAutocomplete}
       />
     )
   }
 }
 
 MUIPlacesAutocomplete.propTypes = {
-  classes: PropTypes.object.isRequired,
+  renderTarget: PropTypes.func.isRequired,
 }
-
-const MUIPlacesAutocompleteHOC = withStyles(styles)(MUIPlacesAutocomplete)
-
-export default MUIPlacesAutocompleteHOC

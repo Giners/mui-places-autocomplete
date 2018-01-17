@@ -21,9 +21,37 @@ or
 npm install mui-places-autocomplete --save --ignore-scripts
 ```
 
-Note that if you exclude the `--ignore-scripts` option when installing a package then the `prepublish` script in `package.json` is ran after installing locally. Tests are ran as part of the `prepublish` script and they will fail if you haven't yet set a Google API key to the enivronment variable `GOOGLE_API_KEY` (see setup section).
+Note that if you exclude the `--ignore-scripts` option when installing a package then the `prepublish` script in `package.json` is ran after installing locally. Tests are ran as part of the `prepublish` script and they will fail if you haven't yet set a Google API key to the enivronment variable `GOOGLE_API_KEY` (see [setup section](#setup)).
 
-# Setup
+# Demo
+**Note that you must have followed the [setup steps](#setup) to run the demo as it depends on services provided by Google.**
+
+To see a demo of this component locally clone this repository and run:
+
+```
+yarn demo
+```
+
+or
+
+```
+npm run demo
+```
+
+# Usage
+```javascript
+import React from 'react'
+import SomeCoolComponent from 'some-third-party-package'
+import MUIPlacesAutocomplete from 'mui-places-autocomplete'
+
+// Use 'renderTarget' prop to render a component/target we want the suggestions to popover
+const Example = () => (<MUIPlacesAutocomplete renderTarget={() => (<SomeCoolComponent />)} />)
+
+export default Example
+```
+
+<a name="setup"></a>
+### Setup
 This component relies on some basic setup before usage. It makes use of services provided by Google. To properly make use of the services you will need to do three things:
 1. Enable the Google Places API Web Service
 2. Enable the Google Maps JavaScript API
@@ -41,30 +69,11 @@ Be sure that you replace `YOUR_API_KEY` with the one you just created or obtaine
 
 This component also has testing which makes use of the Places library in the Google Maps JavaScript API. Rather than loading the Places library it uses a module provided by Google. It also requires an API key. This key can be provided to a file @ `test/api-key.js`. If you would like it can also be provided as an environment variable named `GOOGLE_API_KEY`.
 
-# Usage
-```javascript
-import React from 'react'
-import MUIPlacesAutocomplete from 'mui-places-autocomplete'
+### Props
 
-const Example = () => (<MUIPlacesAutocomplete />)
-
-export default Example
-```
-
-# Demo
-To see a demo of this component locally clone this repository and run:
-
-```
-yarn demo
-```
-
-or
-
-```
-npm run demo
-```
-
-Note that you must have followed the setup steps to run the demo as it depends on services provided by Google.
+| Prop | Type | Required | Description |
+| :--- | :--- | :---: | :--- |
+| `renderTarget` | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
 
 # Feedback
 This was my first open-source project that I undertook while I was teaching myself full-stack development (JS (ES6)/HTML/CSS, Node, Express, NoSQL (DynamoDB), GraphQL, React, Redux, Material-UI, etc.). I'm very interested in taking feedback to either improve my skills (i.e. correct errors :)) or to make this component more useful in general/for your use case. Please feel free to provide feedback by opening an issue or messaging me.
@@ -74,4 +83,4 @@ This was my first open-source project that I undertook while I was teaching myse
 * Overview and examples for the Autocomplete features in the Places library: https://developers.google.com/maps/documentation/javascript/places-autocomplete
 
 # License
-MIT
+[MIT](https://gine.mit-license.org/)
