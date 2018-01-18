@@ -72,7 +72,7 @@ This component also has testing which makes use of the Places library in the Goo
 ### Props
 
 | Prop | Type | Required | Description |
-| :--- | :--- | :---: | :--- |
+| :--- | :--- | :------: | :---------- |
 | `renderTarget` | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
 
 # Feedback
