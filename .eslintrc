@@ -16,6 +16,10 @@
       2,
       "never"
     ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
     "object-curly-newline": [
       "error",
       {

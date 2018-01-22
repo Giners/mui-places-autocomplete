@@ -41,11 +41,32 @@ npm run demo
 # Usage
 ```javascript
 import React from 'react'
-import SomeCoolComponent from 'some-third-party-package'
+import SomeCoolComponent from 'some-cool-component'
 import MUIPlacesAutocomplete from 'mui-places-autocomplete'
 
-// Use 'renderTarget' prop to render a component/target we want the suggestions to popover
-const Example = () => (<MUIPlacesAutocomplete renderTarget={() => (<SomeCoolComponent />)} />)
+class Example extends React.Component {
+  constructor() {
+    super()
+
+    this.onSuggestionSelected = this.onSuggestionSelected.bind(this)
+  }
+
+  onSuggestionSelected(suggestion) {
+    // Add your business logic here. In this case we just log...
+    console.log('Selected suggestion:', suggestion)
+  }
+
+  render() {
+    // Use 'renderTarget' prop to render a component/target we want the suggestions to popover
+
+    return (
+      <MUIPlacesAutocomplete
+        onSuggestionSelected={this.onSuggestionSelected}
+        renderTarget={() => (<SomeCoolComponent />)}
+      /> 
+    )
+  }
+}
 
 export default Example
 ```
@@ -73,7 +94,22 @@ This component also has testing which makes use of the Places library in the Goo
 
 | Prop | Type | Required | Description |
 | :--- | :--- | :---: | :--- |
-| `renderTarget` | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
+| [`onSuggestionSelected`](#onSuggestionSelected) | Function | ✓ | Callback that provides the selected suggestion. |
+| [`renderTarget`](#renderTarget) | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
+
+<a name="onSuggestionSelected"></a>
+#### onSuggestionSelected (required)
+
+This function will be called everytime a user has selected a suggestion. It has the following signature:
+
+```javascript
+function onSuggestionSelected(suggestion)
+```
+
+<a name="renderTarget"></a>
+#### renderTarget (required)
+
+This function is invoked during rendering. It ought to return the components/elements that you want the list of suggestions to render (pop) over.
 
 # Feedback
 This was my first open-source project that I undertook while I was teaching myself full-stack development (JS (ES6)/HTML/CSS, Node, Express, NoSQL (DynamoDB), GraphQL, React, Redux, Material-UI, etc.). I'm very interested in taking feedback to either improve my skills (i.e. correct errors :)) or to make this component more useful in general/for your use case. Please feel free to provide feedback by opening an issue or messaging me.
