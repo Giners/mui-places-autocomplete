@@ -46,7 +46,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
     // contains their selected suggestion. Here we will ensure uniqueness amongst suggestions using
     // an ES6 Map so that we don't get duplicate key errors when we render our suggestions.
     const uniqueSuggestions =
-      new Map(suggestions.map(({ description }) => [description, { description }]))
+      new Map(suggestions.map(suggestion => [suggestion.description, suggestion]))
 
     const renderedSuggestions =
       MUIPlacesAutocomplete.renderSuggestions([...uniqueSuggestions.values()], downshiftRenderProps)
@@ -114,7 +114,9 @@ export default class MUIPlacesAutocomplete extends React.Component {
   // highlighted based on the parts of the suggestion that match the query the user entered. This is
   // inline with the Google Maps webapp at the time of writing. This behavior is opposite of how the
   // Google Search bar/component/element works though.
-  static renderSuggestion({ description }, { getItemProps, inputValue, isHighlighted }) {
+  static renderSuggestion(suggestion, { getItemProps, inputValue, isHighlighted }) {
+    const { description } = suggestion
+
     // Calculate the chars to highlight in the suggestion 'description' based on the query
     // ('inputValue') that the user provided us. An array is returned and if any chars ought to be
     // highlighted the array will contain a pair ([a, b]) which denote the indexes of chars to
@@ -127,7 +129,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
 
     return (
       <MenuItem
-        {...getItemProps({ item: description })}
+        {...getItemProps({ item: suggestion })}
         key={description}
         selected={isHighlighted}
         component="div"
@@ -163,6 +165,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
     }
 
     this.onInputValueChange = this.onInputValueChange.bind(this)
+    this.onSuggestionSelected = this.onSuggestionSelected.bind(this)
     this.renderAutocomplete = this.renderAutocomplete.bind(this)
   }
 
@@ -197,11 +200,21 @@ export default class MUIPlacesAutocomplete extends React.Component {
           return
         }
 
-        const suggestions = predictions.map(({ description }) => ({ description }))
-
-        this.setState({ suggestions })
+        this.setState({ suggestions: predictions })
       },
     )
+  }
+
+  // This function is called whenever Downshift detects that a rendered suggestion has been
+  // selected. Although we only use a single argument in our function signature Downshift documents
+  // the function signature as:
+  // onSelect(selectedItem: any, stateAndHelpers: object)
+  onSuggestionSelected(suggestion) {
+    const { onSuggestionSelected } = this.props
+
+    if (onSuggestionSelected) {
+      onSuggestionSelected(suggestion)
+    }
   }
 
   renderAutocomplete({
@@ -243,7 +256,9 @@ export default class MUIPlacesAutocomplete extends React.Component {
   render() {
     return (
       <Downshift
+        onSelect={this.onSuggestionSelected}
         onInputValueChange={this.onInputValueChange}
+        itemToString={({ description }) => description}
         render={this.renderAutocomplete}
       />
     )
@@ -251,5 +266,6 @@ export default class MUIPlacesAutocomplete extends React.Component {
 }
 
 MUIPlacesAutocomplete.propTypes = {
+  onSuggestionSelected: PropTypes.func.isRequired,
   renderTarget: PropTypes.func.isRequired,
 }

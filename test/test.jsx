@@ -25,6 +25,10 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
   // Common search value that can be used throughout the tests
   const searchInputValue = 'Bellingham'
 
+  // Wrapper providing access to DOM APIs/full DOM rendering for the <MUIPlacesAutocomplete>
+  // component that will be under test
+  let mpaWrapper = null
+
   before('Configure Enzyme', function () {
     Enzyme.configure({ adapter: new Adapter() })
   })
@@ -37,11 +41,42 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
     chaiJestSnapshot.configureUsingMochaContext(this)
   })
 
-  describe('Renders correctly for given application state:', function () {
-    // Wrapper providing access to DOM APIs/full DOM rendering for the <MUIPlacesAutocomplete>
-    // component that will be under test
-    let mpaWrapper = null
+  before('"Load" the Google Maps JavaScript API on \'window\'', function () {
+    // These tests depend on a DOM to be setup for more indepth tests that either do full DOM
+    // rendering or for leveraging DOM APIs. At this point we presume that the DOM has been setup
+    // and we can add additional properties to the global 'window' object.
+    expect(global.window).to.exist
 
+    // The <MUIPlacesAutocomplete> component expects the Google Maps JavaScript API to be loaded
+    // in the 'window' object. Since we aren't loading it we mock out the API and add it to the
+    // 'window' object.
+    global.window.google = {
+      maps: {
+        places: {
+          // We disable the ESLint rule 'class-methods-use-this' on the next line as our component
+          // depends on the method being available to an instance of the AutocompleteService
+          // class (i.e. we can't convert it into a static).
+          // eslint-disable-next-line class-methods-use-this
+          AutocompleteService: class AutocompleteService { getPlacePredictions() { } },
+          // Don't forget to mock out the status' that are used by the <MUIPlacesAutocomplete>
+          // component
+          PlacesServiceStatus: {
+            OK: 'OK',
+          },
+        },
+      },
+    }
+  })
+
+  beforeEach('Setup Enzyme wrapper', function () {
+    mpaWrapper = mount(
+      <MUIPlacesAutocomplete onSuggestionSelected={() => {}} renderTarget={() => (<div />)} />,
+    )
+
+    expect(mpaWrapper).to.not.be.null
+  })
+
+  describe('Renders correctly for given application state:', function () {
     // Helper function to get the JSON of the <MenuList> component in our <MUIPlacesAutocomplete>
     // component. Useful for snapshot testing only the components that we are in charge of
     // rendering (i.e. the suggestions).
@@ -56,39 +91,6 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
 
       return toJson(mlWrapper)
     }
-
-    before('"Load" the Google Maps JavaScript API on \'window\'', function () {
-      // These tests depend on a DOM to be setup for more indepth tests that either do full DOM
-      // rendering or for leveraging DOM APIs. At this point we presume that the DOM has been setup
-      // and we can add additional properties to the global 'window' object.
-      expect(global.window).to.exist
-
-      // The <MUIPlacesAutocomplete> component expects the Google Maps JavaScript API to be loaded
-      // in the 'window' object. Since we aren't loading it we mock out the API and add it to the
-      // 'window' object.
-      global.window.google = {
-        maps: {
-          places: {
-            // We disable the ESLint rule 'class-methods-use-this' on the next line as our component
-            // depends on the method being available to an instance of the AutocompleteService
-            // class (i.e. we can't convert it into a static).
-            // eslint-disable-next-line class-methods-use-this
-            AutocompleteService: class AutocompleteService { getPlacePredictions() { } },
-            // Don't forget to mock out the status' that are used by the <MUIPlacesAutocomplete>
-            // component
-            PlacesServiceStatus: {
-              OK: 'OK',
-            },
-          },
-        },
-      }
-    })
-
-    beforeEach('Setup Enzyme wrapper', function () {
-      mpaWrapper = mount(<MUIPlacesAutocomplete renderTarget={() => (<div />)} />)
-
-      expect(mpaWrapper).to.not.be.null
-    })
 
     it('Initial state', function () {
       expect(mpaWrapper.state().suggestions).to.exist
@@ -184,7 +186,6 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
 
       // Second set the start of our component to provide suggestions as if they were returned from
       // the Google AutocompleteService...
-
       mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
 
       // Now check that our image is rendered...
@@ -197,10 +198,36 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
     })
   })
 
+  describe('Provides expected UX:', function () {
+    it('\'onSuggestionSelected\' invoked when suggestion selected', function (done) {
+      // Setup our wrapper to signal that our test has completed successfully
+      const testSuccessCB = (suggestion) => {
+        expect(suggestion).to.exist
+
+        done()
+      }
+
+      mpaWrapper.setProps({ onSuggestionSelected: testSuccessCB })
+
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      // Now simulate a click on a rendered suggestion which ought to signal
+      const miWrapper = mpaWrapper.find('MenuItem')
+
+      expect(miWrapper.length).to.equal(1)
+
+      miWrapper.simulate('click')
+    })
+  })
+
   describe('Consumes Google Maps JavaScript API correctly:', function () {
     it('AutocompleteService.getPlacePredictions() returns predictions for given input', function (done) {
-      let mpaWrapper = null
-
       // Find the 'input' element so we can simulate an event for changing the input which will
       // cause our component to get place predictions with the Google Maps API and ultimately update
       // its state with place suggestions. Before doing so setup our test callback so we can assert
@@ -237,9 +264,11 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
         },
       }
 
-      // Now mount our component to make use of our mock API when we send a 'change' event on our
+      // Now re-mount our component to make use of our mock API when we send a 'change' event on our
       // 'input' element
-      mpaWrapper = mount(<MUIPlacesAutocomplete renderTarget={() => (<div />)} />)
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete onSuggestionSelected={() => {}} renderTarget={() => (<div />)} />,
+      )
 
       const inputWrapper = mpaWrapper.find('input')
 
