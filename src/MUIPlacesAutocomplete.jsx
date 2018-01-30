@@ -258,7 +258,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
       <Downshift
         onSelect={this.onSuggestionSelected}
         onInputValueChange={this.onInputValueChange}
-        itemToString={({ description }) => description}
+        itemToString={suggestion => (suggestion ? suggestion.description : '')}
         render={this.renderAutocomplete}
       />
     )
