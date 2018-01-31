@@ -2,10 +2,12 @@
 [![Travis CI](https://img.shields.io/travis/Giners/mui-places-autocomplete/master.svg)](https://travis-ci.org/Giners/mui-places-autocomplete/builds)
 
 # Features
-* Easy to use input for searching for places
+* Easy-to-use component for searching for places
 * Place suggestions displayed in realtime
+* Input state can be controlled externally
 * Google Material Design styling provided by next version of Material-UI (v1)
 * Safe to render on the server (SSR)
+* Integrates with other 3rd party libraries (e.g. [Redux Form](#advancedUsage))
 * Thoroughly tested
 
 # Installation
@@ -71,6 +73,11 @@ class Example extends React.Component {
 export default Example
 ```
 
+<a name="advancedUsage"></a>
+### Advanced Usage
+
+* [DemoControlledInput.jsx](https://github.com/Giners/mui-places-autocomplete/blob/master/demo/DemoControlledInput.jsx) - Example that shows how to control the `<input>` element as well as integrate with Redux Form.
+
 <a name="setup"></a>
 ### Setup
 This component relies on some basic setup before usage. It makes use of services provided by Google. To properly make use of the services you will need to do three things:
@@ -96,6 +103,7 @@ This component also has testing which makes use of the Places library in the Goo
 | :--- | :--- | :---: | :--- |
 | [`onSuggestionSelected`](#onSuggestionSelected) | Function | ✓ | Callback that provides the selected suggestion. |
 | [`renderTarget`](#renderTarget) | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
+| [`textFieldProps`](#textFieldProps) | Object | | Props that will be spread onto a `<TextField>` MUI component that is responsible for rendering the `<input>` element. If you would like to [control the state of the `<input>` element](#textFieldPropsValueProp) externally you must set the `value` key on the object passed to `textFieldProps`. [`change` event handlers](#textFieldPropsOnChangeProp) will simply receive a string that pertains to the value of the `<input>` element. |
 
 <a name="onSuggestionSelected"></a>
 #### onSuggestionSelected (required)
@@ -110,6 +118,28 @@ function onSuggestionSelected(suggestion)
 #### renderTarget (required)
 
 This function is invoked during rendering. It ought to return the components/elements that you want the list of suggestions to render (pop) over.
+
+<a name="textFieldProps"></a>
+#### textFieldProps
+
+A MUI [`<TextField>`](https://material-ui-next.com/api/text-field/) component is used to render the `<input>` element. It can be customized to meet your needs by supplying an object to the `textFieldProps` prop. All properties on the object supplied to the `textFieldProps` prop will be spread onto the `<TextField>` component. You can read more about the props that the `<TextField>` component accepts here: [`<TextField>` API documentation](https://material-ui-next.com/api/text-field/)
+
+<a name="textFieldPropsValueProp"></a>
+##### `<input>` `value` prop
+
+To help meet your needs the state of the `<input>` element can be controlled externally. It is also useful if you would like to integrate `<MUIPlacesAutocomplete>` with other 3rd party libraries such as [Redux Form](https://redux-form.com). To control the state of the `<input>` element you must set the `value` property on the object passed to the `textFieldProps` prop.
+
+```javascript
+// 'getState()' can return state from a React component, your app (e.g via Redux), some other source, etc.
+const { inputValue } = getState()
+
+<MUIPlacesAutocomplete textFieldProps={{ value: inputValue }} />
+```
+
+<a name="textFieldPropsOnChangeProp"></a>
+##### `<input>` `onChange` prop
+
+To handle `change` events from the `<input>` element an event handler can be provided to the `onChange` property on the object passed to the `textFieldProps` prop. When the event handler is invoked it won't receive an object representing a `change` event but rather it will receive a string that pertains to the value of the `<input>` element. This behavior is contrary to what is documented in the [MUI `<TextField>` API documentation](https://material-ui-next.com/api/text-field/).
 
 # Feedback
 This was my first open-source project that I undertook while I was teaching myself full-stack development (JS (ES6)/HTML/CSS, Node, Express, NoSQL (DynamoDB), GraphQL, React, Redux, Material-UI, etc.). I'm very interested in taking feedback to either improve my skills (i.e. correct errors :)) or to make this component more useful in general/for your use case. Please feel free to provide feedback by opening an issue or messaging me.
