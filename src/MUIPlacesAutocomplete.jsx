@@ -182,14 +182,6 @@ export default class MUIPlacesAutocomplete extends React.Component {
   // function signature as:
   // onInputValueChange(inputValue: string, stateAndHelpers: object)
   onInputValueChange(inputValue) {
-    const { textFieldProps: { onChange } } = this.props
-
-    // Invoke any 'onChange' event handlers since they aren't attached to the <input> element (see
-    // the 'renderAutocomplete' method for an explanation why).
-    if (onChange) {
-      onChange(inputValue)
-    }
-
     // If the inputs value is empty we can return as we will get an error if we provide the empty
     // string when we perform a search. Set our suggestions to empty here as well so we don't render
     // the old suggestions.
@@ -235,33 +227,21 @@ export default class MUIPlacesAutocomplete extends React.Component {
     const { suggestions } = this.state
     const { renderTarget, textFieldProps } = this.props
 
-    // Delete any 'onChange' callback that would be applied to the <input> element. We do invoke the
-    // 'onChange' callback but do so when <Downshift> alerts us that its internal state has
-    // changed (i.e. the callback supplied to the 'onInputValueChange' prop on the <Downshift>
-    // component).
-    //
-    // If we fail to do this then the 'onChange' callback will be composed with the 'onChange'
-    // callback that <Downshift> uses internally (see 'getInputProps' implementation). This results
-    // in undesired behavior when the <input> element is controlled in two places, externally and by
-    // <Downshift>.
-    //
-    // We must also delete any 'value' property we receive in 'textFieldProps'. If the 'value'
-    // property is supplied in the 'textFieldProps' prop it indicates that an external source would
-    // like to exert control over the state of the <input> element. We facilitate this by passing
-    // the value to the 'inputValue' prop when we render the <Downshift> component.
-    const textFieldPropsCopy = { ...textFieldProps }
-    delete textFieldPropsCopy.onChange
-    delete textFieldPropsCopy.value
-
     // We set the value of 'tag' on the <Manager> component to false to allow the rendering of
     // children instead of a specific DOM element.
     //
     // We only want to render our suggestions container if Downshift says we are open AND there are
-    // suggestions to actually
+    // suggestions to actually render. There may not be suggestions yet due to the async nature of
+    // requesting them from the Google Maps/Places service.
+    //
+    // Provide an 'id' to the input props (see <TextField>) to accommodate SSR. If we don't then we
+    // will see checksum errors with the 'id' prop of the <input> element not matching what was
+    // rendered on the server vs. what was rendered on the client after rehydration due to automatic
+    // 'id' prop generation by <Downshift>.
     return (
       <div>
         <Manager tag={false}>
-          <TextField {...getInputProps(textFieldPropsCopy)} />
+          <TextField {...getInputProps({ ...textFieldProps, id: 'mui-places-autocomplete-input' })} />
           <Target>{renderTarget()}</Target>
           {isOpen ? MUIPlacesAutocomplete.renderSuggestionsContainer(
                       suggestions,

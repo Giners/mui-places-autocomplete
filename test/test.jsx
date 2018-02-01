@@ -199,10 +199,44 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
   })
 
   describe('Provides expected UX:', function () {
+    it('\'value\' input prop can be used to control <input>', function () {
+      const controlValue = 'LOL Bananas'
+
+      mpaWrapper.setProps({ textFieldProps: { value: controlValue } })
+
+      expect(mpaWrapper.find(`input[value="${controlValue}"]`).length).to.equal(1)
+    })
+
+    it('\'onChange\' input prop invoked when input changed', function (done) {
+      // Setup our wrapper to signal that our test has completed successfully
+      const testSuccessCB = (inputValue) => {
+        try {
+          expect(inputValue).to.be.an('object')
+          expect(inputValue.target).to.exist
+          expect(inputValue.target.value).to.exist
+          expect(inputValue.target.value).to.equal(searchInputValue)
+        } catch (e) {
+          done(e)
+          return
+        }
+
+        done()
+      }
+
+      mpaWrapper.setProps({ textFieldProps: { onChange: testSuccessCB } })
+
+      // Signal to <MUIPlacesAutocomplete> we would like to be called back when the input changes
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+    })
+
     it('\'onSuggestionSelected\' invoked when suggestion selected', function (done) {
       // Setup our wrapper to signal that our test has completed successfully
       const testSuccessCB = (suggestion) => {
-        expect(suggestion).to.exist
+        try {
+          expect(suggestion).to.exist
+        } catch (e) {
+          done(e)
+        }
 
         done()
       }
@@ -216,65 +250,6 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
       // Second set the start of our component to provide suggestions as if they were returned from
       // the Google AutocompleteService...
       mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
-
-      // Now simulate a click on a rendered suggestion which ought to signal our success callback
-      const miWrapper = mpaWrapper.find('MenuItem')
-
-      expect(miWrapper.length).to.equal(1)
-
-      miWrapper.simulate('click')
-    })
-
-    it('\'value\' input prop can be used to control <input>', function () {
-      const controlValue = 'LOL Bananas'
-
-      mpaWrapper.setProps({ textFieldProps: { value: controlValue } })
-
-      expect(mpaWrapper.find(`input[value="${controlValue}"]`).length).to.equal(1)
-    })
-
-    it('\'onChange\' input prop invoked when input changed', function (done) {
-      // Setup our wrapper to signal that our test has completed successfully
-      const testSuccessCB = (inputValue) => {
-        expect(inputValue).to.be.a('string')
-        expect(inputValue).to.not.be.empty
-        expect(inputValue).to.equal(searchInputValue)
-
-        done()
-      }
-
-      mpaWrapper.setProps({ textFieldProps: { onChange: testSuccessCB } })
-
-      // Signal to <MUIPlacesAutocomplete> we would like to be called back when the input changes
-      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
-    })
-
-    it('\'onChange\' input prop invoked when suggestion selected', function (done) {
-      // This description will be used to setup the suggestion we will select but more importantly
-      // used to verify that the 'onChange' callback is passed the value of the selected suggestion
-      // vs. what was provided as input (i.e. the users search query)
-      const description = 'Bellingham, WA, United States'
-
-      // Setup our wrapper to signal that our test has completed successfully
-      const testSuccessCB = (inputValue) => {
-        expect(inputValue).to.be.a('string')
-        expect(inputValue).to.not.be.empty
-        expect(inputValue).to.equal(description)
-
-        done()
-      }
-
-      // To get suggestions to be rendered first simulate an input onChange event which will cause
-      // <Downshift> to believe that our autocomplete/dropdown is open...
-      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
-
-      // Second set the state of our component to provide suggestions as if they were returned from
-      // the Google AutocompleteService...
-      mpaWrapper.setState({ suggestions: [{ description }] })
-
-      // Set our control prop after we change the input so we only get called back as a result of
-      // selecting a suggestion
-      mpaWrapper.setProps({ textFieldProps: { onChange: testSuccessCB } })
 
       // Now simulate a click on a rendered suggestion which ought to signal our success callback
       const miWrapper = mpaWrapper.find('MenuItem')

@@ -14,14 +14,16 @@ import MUIPlacesAutocomplete from './../dist'
 // Stateless function that we pass to the 'component' prop of the <Field> to render
 // <MUIPlacesAutocomplete>. By passing the props that <Field> passes our stateless function as the
 // 'textFieldProps' on <MUIPlacesAutocomplete> we are essentially stating that the <Field> would
-// like to control the state of the resulting <input> element that gets rendered.
+// like to control the state of the resulting <input> element that gets rendered. This is due to the
+// addition of the 'value' property that gets spread onto the object passed to the 'textFieldProps'
+// prop.
 //
 // It is important to define this stateless function outside of the method that renders the actual
 // <Field> to avoid causing it to re-render. For more info please refer to the following docs:
 // https://redux-form.com/7.2.0/docs/api/field.md/#2-a-stateless-function
-const renderMUIPlacesAutocomplete = ({ input, ...other }) => (
+const renderMUIPlacesAutocomplete = ({ onSuggestionSelected, ...other }) => (
   <MUIPlacesAutocomplete
-    onSuggestionSelected={() => { }}
+    onSuggestionSelected={onSuggestionSelected}
     renderTarget={() => (
       <div
         style={{
@@ -34,16 +36,25 @@ const renderMUIPlacesAutocomplete = ({ input, ...other }) => (
         <Button raised color="primary" type="submit">Submit</Button>
       </div>
     )}
-    textFieldProps={{ ...other, ...input }}
+    textFieldProps={{ ...other }}
   />
 )
 
 renderMUIPlacesAutocomplete.propTypes = {
+  onSuggestionSelected: PropTypes.func.isRequired,
   input: PropTypes.object.isRequired,
 }
 
 const DemoControlledInput = (props) => {
-  const { handleSubmit } = props
+  const { change, handleSubmit } = props
+
+  // Since we are controlling the state of the <input> element via Redux Form we want to ensure that
+  // the <input> elements state is consistent with any suggestions a user may select. To do so we
+  // dispatch an action to Redux Form to update the <Field> with a name of 'demoField'. For more
+  // info see: https://redux-form.com/7.2.1/docs/api/actioncreators.md/
+  const onSuggestionSelected = (suggestion) => {
+    change('demoField', suggestion.description)
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -52,6 +63,7 @@ const DemoControlledInput = (props) => {
         name="demoField"
         autoFocus={false}
         placeholder="Search for a place"
+        onSuggestionSelected={onSuggestionSelected}
         component={renderMUIPlacesAutocomplete}
       />
     </form>
@@ -60,6 +72,7 @@ const DemoControlledInput = (props) => {
 
 DemoControlledInput.propTypes = {
   // Injected by Redux Form
+  change: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 }
 
