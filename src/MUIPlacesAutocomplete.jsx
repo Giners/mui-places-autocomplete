@@ -225,23 +225,23 @@ export default class MUIPlacesAutocomplete extends React.Component {
     highlightedIndex,
   }) {
     const { suggestions } = this.state
-    const { renderTarget } = this.props
+    const { renderTarget, textFieldProps } = this.props
 
     // We set the value of 'tag' on the <Manager> component to false to allow the rendering of
     // children instead of a specific DOM element.
     //
     // We only want to render our suggestions container if Downshift says we are open AND there are
-    // suggestions to actually
+    // suggestions to actually render. There may not be suggestions yet due to the async nature of
+    // requesting them from the Google Maps/Places service.
+    //
+    // Provide an 'id' to the input props (see <TextField>) to accommodate SSR. If we don't then we
+    // will see checksum errors with the 'id' prop of the <input> element not matching what was
+    // rendered on the server vs. what was rendered on the client after rehydration due to automatic
+    // 'id' prop generation by <Downshift>.
     return (
       <div>
         <Manager tag={false}>
-          <TextField
-            {...getInputProps({
-              autoFocus: false,
-              placeholder: 'Search for a place',
-              fullWidth: true,
-            })}
-          />
+          <TextField {...getInputProps({ ...textFieldProps, id: 'mui-places-autocomplete-input' })} />
           <Target>{renderTarget()}</Target>
           {isOpen ? MUIPlacesAutocomplete.renderSuggestionsContainer(
                       suggestions,
@@ -254,12 +254,20 @@ export default class MUIPlacesAutocomplete extends React.Component {
   }
 
   render() {
+    // Check to see if a consumer would like to exert control on the <input> elements state. If so
+    // we pass it to the <Downshift> component as the 'inputValue' prop to provide control of the
+    // <input> elements state to the consumer.
+    const controlProps = this.props.textFieldProps && this.props.textFieldProps.value ?
+      { inputValue: this.props.textFieldProps.value } :
+      { }
+
     return (
       <Downshift
         onSelect={this.onSuggestionSelected}
         onInputValueChange={this.onInputValueChange}
         itemToString={suggestion => (suggestion ? suggestion.description : '')}
         render={this.renderAutocomplete}
+        {...controlProps}
       />
     )
   }
@@ -268,4 +276,9 @@ export default class MUIPlacesAutocomplete extends React.Component {
 MUIPlacesAutocomplete.propTypes = {
   onSuggestionSelected: PropTypes.func.isRequired,
   renderTarget: PropTypes.func.isRequired,
+  textFieldProps: PropTypes.object,
+}
+
+MUIPlacesAutocomplete.defaultProps = {
+  textFieldProps: { autoFocus: false, placeholder: 'Search for a place', fullWidth: true },
 }
