@@ -74,6 +74,7 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
     )
 
     expect(mpaWrapper).to.not.be.null
+    expect(mpaWrapper.length).to.equal(1)
   })
 
   describe('Renders correctly for given application state:', function () {
@@ -199,7 +200,7 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
   })
 
   describe('Provides expected UX:', function () {
-    it('\'value\' input prop can be used to control <input>', function () {
+    it('\'textFieldProps.value\' prop can be used to control <input>', function () {
       const controlValue = 'LOL Bananas'
 
       mpaWrapper.setProps({ textFieldProps: { value: controlValue } })
@@ -207,7 +208,36 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
       expect(mpaWrapper.find(`input[value="${controlValue}"]`).length).to.equal(1)
     })
 
-    it('\'onChange\' input prop invoked when input changed', function (done) {
+    it('\'textFieldProps.id\' prop can be used to set \'id\' on the <input> element', function () {
+      const idValue = 'lol-bananas'
+
+      // When testing if the 'id' value gets set properly on the resulting <input> element you must
+      // set the 'id' input prop when first mounting <MUIPlacesAutocomplete>. That is because the
+      // first time the <Downshift> element is mounted it sets and maintains the 'id' value
+      // throughout re-renderings as seen here:
+      // https://github.com/paypal/downshift/blob/118a87234a9331e716142acfb95eb411cc4f8015/src/downshift.js#L623
+      //
+      // This fact is important as the 'id' value is the last value set on the props returned from
+      // the 'getInputProps()' function as seen here:
+      // https://github.com/paypal/downshift/blob/118a87234a9331e716142acfb95eb411cc4f8015/src/downshift.js#L661
+      //
+      // In other words setting the props on an already mounted <MUIPlacesAutocomplete> won't change
+      // the value of 'id' and will result in the test always failing.
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete
+          onSuggestionSelected={() => {}}
+          renderTarget={() => (<div />)}
+          textFieldProps={{ id: idValue }}
+        />,
+      )
+
+      expect(mpaWrapper).to.not.be.null
+      expect(mpaWrapper.length).to.equal(1)
+
+      expect(mpaWrapper.find(`input[id="${idValue}"]`).length).to.equal(1)
+    })
+
+    it('\'textFieldProps.onChange\' prop invoked when input changed', function (done) {
       // Setup our wrapper to signal that our test has completed successfully
       const testSuccessCB = (inputValue) => {
         try {
