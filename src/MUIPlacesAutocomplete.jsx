@@ -241,7 +241,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
     return (
       <div>
         <Manager tag={false}>
-          <TextField {...getInputProps({ ...textFieldProps, id: 'mui-places-autocomplete-input' })} />
+          <TextField {...getInputProps({ id: 'mui-places-autocomplete-input', ...textFieldProps })} />
           <Target>{renderTarget()}</Target>
           {isOpen ? MUIPlacesAutocomplete.renderSuggestionsContainer(
                       suggestions,
