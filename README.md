@@ -65,7 +65,7 @@ class Example extends React.Component {
       <MUIPlacesAutocomplete
         onSuggestionSelected={this.onSuggestionSelected}
         renderTarget={() => (<SomeCoolComponent />)}
-      /> 
+      />
     )
   }
 }
@@ -103,6 +103,7 @@ This component also has testing which makes use of the Places library in the Goo
 | :--- | :--- | :---: | :--- |
 | [`onSuggestionSelected`](#onSuggestionSelected) | Function | ✓ | Callback that provides the selected suggestion. |
 | [`renderTarget`](#renderTarget) | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
+| [`createAutocompleteRequest`](#createAutocompleteRequest) | Function | | Returns an object that modifies which suggestions are shown to the user. |
 | [`textFieldProps`](#textFieldProps) | Object | | Props that will be spread onto a `<TextField>` MUI component that is responsible for rendering the `<input>` element. If you would like to [control the state of the `<input>` element](#textFieldPropsValueProp) externally you must set the `value` key on the object passed to `textFieldProps`. |
 
 <a name="onSuggestionSelected"></a>
@@ -118,6 +119,45 @@ function onSuggestionSelected(suggestion)
 #### renderTarget (required)
 
 This function is invoked during rendering. It ought to return the components/elements that you want the list of suggestions to render (pop) over.
+
+<a name="createAutocompleteRequest"></a>
+#### createAutocompleteRequest
+
+`<MUIPlacesAutocomplete>` leverages the Google Places API Web Service to provide place suggestions that a user may select from based on the users input. The requests made to the Google Places API Web Service are very simple by default. This results in a wider breadth in the types of suggestions (i.e. an establishment, city/locality, specific address, etc.) returned when the user first starts searching for a place. The set of returned suggestions may also not be geospatially tight ("close to each other"). As the users search becomes more specific the types of suggestions returned start to narrow as well as tighten geospatially around each other.
+
+Depending on your use case you may wish to:
+* Specify (i.e. narrow) the types of suggestions returned by the Google Places API Web Service
+* Bias/restrict the suggestions returned by the Google Places API Web Service to a specific area
+
+You can achieve this by providing a function to the `createAutocompleteRequest` prop. The function is called everytime a request for suggestions is made to the Google Places API Web Service. The function passed to the `createAutocompleteRequest` prop ought to have the following signature:
+
+```javascript
+function createAutocompleteRequest(inputValue)
+```
+
+Where:
+* `inputValue` - The users current search value
+
+It ought to return an object that specifies what suggestions (i.e. types and bias/area restrictions) should be returned by the Google Places API Web Service. For example:
+
+```javascript
+function createAutocompleteRequest(inputValue) {
+  // Restrict the returned suggestions to those that:
+  // 1) Are in Bellingham (latitude 48.7519, longitude 122.4787)
+  // 2) Are within ~3 miles (5000 meters)
+  // 3) Have an address associated with them
+  return {
+    input: inputValue,
+    types: ['address'],
+    location: { lat: () => 48.7519, lng: () => 122.4787 },
+    radius: 5000,
+  }
+}
+```
+
+The properties that are allowed on the returned object are documented here: [AutocompleteRequest API object specification](https://developers.google.com/maps/documentation/javascript/reference#AutocompletionRequest)
+
+**Note:** There is no validation for what is returned from the function provided to the `createAutocompleteRequest` prop. So if you don't return an object or set the properties incorrectly then things are going to go poorly.
 
 <a name="textFieldProps"></a>
 #### textFieldProps

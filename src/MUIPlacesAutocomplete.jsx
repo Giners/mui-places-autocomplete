@@ -190,8 +190,10 @@ export default class MUIPlacesAutocomplete extends React.Component {
       return
     }
 
+    const { createAutocompleteRequest } = this.props
+
     this.autocompleteService.getPlacePredictions(
-      { input: inputValue },
+      createAutocompleteRequest(inputValue),
       (predictions, serviceStatus) => {
         // If the response doesn't contain a valid result then set our state as if no suggestions
         // were returned
@@ -276,9 +278,11 @@ export default class MUIPlacesAutocomplete extends React.Component {
 MUIPlacesAutocomplete.propTypes = {
   onSuggestionSelected: PropTypes.func.isRequired,
   renderTarget: PropTypes.func.isRequired,
+  createAutocompleteRequest: PropTypes.func,
   textFieldProps: PropTypes.object,
 }
 
 MUIPlacesAutocomplete.defaultProps = {
+  createAutocompleteRequest: inputValue => ({ input: inputValue }),
   textFieldProps: { autoFocus: false, placeholder: 'Search for a place', fullWidth: true },
 }
