@@ -66,7 +66,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
       <Popper
         placement="top-start"
         modifiers={({ inner: { enabled: true } })}
-        style={{ left: 0, right: 0 }}
+        style={{ left: 0, right: 0, zIndex: 1 }}
       >
         {({ popperProps, restProps }) => (
           <div

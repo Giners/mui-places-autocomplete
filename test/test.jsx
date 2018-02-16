@@ -288,6 +288,24 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
 
       miWrapper.simulate('click')
     })
+
+    it('Popper has default z-index of 1', function () {
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      const pWrapper = mpaWrapper.find('Popper')
+      expect(pWrapper.exists()).to.be.true
+
+      const styleProps = pWrapper.prop('style')
+      expect(styleProps).to.exist
+      expect(styleProps.zIndex).to.exist
+      expect(styleProps.zIndex).to.be.equal(1)
+    })
   })
 
   describe('Consumes Google Maps JavaScript API correctly:', function () {
