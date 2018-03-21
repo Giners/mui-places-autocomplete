@@ -35,11 +35,12 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
       >
         <withStyles(MenuItem)
           component="div"
-          id="downshift-1-item-0"
+          id="downshift-3-item-0"
           key=".0:$Bellingham, WA, United States"
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseEnter={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
           selected={false}
           tabIndex={-1}
         >
@@ -51,10 +52,11 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
               }
             }
             component="div"
-            id="downshift-1-item-0"
+            id="downshift-3-item-0"
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseEnter={[Function]}
+            onMouseDown={[Function]}
+            onMouseMove={[Function]}
             role="menuitem"
             selected={false}
             tabIndex={-1}
@@ -63,10 +65,11 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
               button={true}
               className="MuiMenuItem-root-51"
               component="div"
-              id="downshift-1-item-0"
+              id="downshift-3-item-0"
               onClick={[Function]}
               onFocus={[Function]}
-              onMouseEnter={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -92,10 +95,11 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                 disableGutters={false}
                 disabled={false}
                 divider={false}
-                id="downshift-1-item-0"
+                id="downshift-3-item-0"
                 onClick={[Function]}
                 onFocus={[Function]}
-                onMouseEnter={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
                 role="menuitem"
                 tabIndex={-1}
               >
@@ -103,11 +107,12 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                   className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
                   component="div"
                   disabled={false}
-                  id="downshift-1-item-0"
+                  id="downshift-3-item-0"
                   keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                   onClick={[Function]}
                   onFocus={[Function]}
-                  onMouseEnter={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseMove={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
@@ -124,11 +129,12 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     disableRipple={false}
                     disabled={false}
                     focusRipple={false}
-                    id="downshift-1-item-0"
+                    id="downshift-3-item-0"
                     keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                     onClick={[Function]}
                     onFocus={[Function]}
-                    onMouseEnter={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseMove={[Function]}
                     role="menuitem"
                     tabIndex={-1}
                     type="button"
@@ -136,15 +142,15 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     <div
                       className="MuiButtonBase-root-63 MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
                       disabled={false}
-                      id="downshift-1-item-0"
+                      id="downshift-3-item-0"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      onMouseMove={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
                       onTouchMove={[Function]}
@@ -277,11 +283,12 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
       >
         <withStyles(MenuItem)
           component="div"
-          id="downshift-1-item-0"
+          id="downshift-4-item-0"
           key=".0:$Bellingham, WA, United States"
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseEnter={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
           selected={false}
           tabIndex={-1}
         >
@@ -293,10 +300,11 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
               }
             }
             component="div"
-            id="downshift-1-item-0"
+            id="downshift-4-item-0"
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseEnter={[Function]}
+            onMouseDown={[Function]}
+            onMouseMove={[Function]}
             role="menuitem"
             selected={false}
             tabIndex={-1}
@@ -305,10 +313,11 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
               button={true}
               className="MuiMenuItem-root-51"
               component="div"
-              id="downshift-1-item-0"
+              id="downshift-4-item-0"
               onClick={[Function]}
               onFocus={[Function]}
-              onMouseEnter={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -334,10 +343,11 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                 disableGutters={false}
                 disabled={false}
                 divider={false}
-                id="downshift-1-item-0"
+                id="downshift-4-item-0"
                 onClick={[Function]}
                 onFocus={[Function]}
-                onMouseEnter={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
                 role="menuitem"
                 tabIndex={-1}
               >
@@ -345,11 +355,12 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                   className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
                   component="div"
                   disabled={false}
-                  id="downshift-1-item-0"
+                  id="downshift-4-item-0"
                   keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                   onClick={[Function]}
                   onFocus={[Function]}
-                  onMouseEnter={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseMove={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
@@ -366,11 +377,12 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     disableRipple={false}
                     disabled={false}
                     focusRipple={false}
-                    id="downshift-1-item-0"
+                    id="downshift-4-item-0"
                     keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                     onClick={[Function]}
                     onFocus={[Function]}
-                    onMouseEnter={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseMove={[Function]}
                     role="menuitem"
                     tabIndex={-1}
                     type="button"
@@ -378,15 +390,15 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     <div
                       className="MuiButtonBase-root-63 MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
                       disabled={false}
-                      id="downshift-1-item-0"
+                      id="downshift-4-item-0"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      onMouseMove={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
                       onTouchMove={[Function]}
@@ -523,7 +535,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
           key=".0:$Bellingham, WA, United States"
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseEnter={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
           selected={false}
           tabIndex={-1}
         >
@@ -538,7 +551,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
             id="downshift-1-item-0"
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseEnter={[Function]}
+            onMouseDown={[Function]}
+            onMouseMove={[Function]}
             role="menuitem"
             selected={false}
             tabIndex={-1}
@@ -550,7 +564,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
               id="downshift-1-item-0"
               onClick={[Function]}
               onFocus={[Function]}
-              onMouseEnter={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -579,7 +594,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                 id="downshift-1-item-0"
                 onClick={[Function]}
                 onFocus={[Function]}
-                onMouseEnter={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
                 role="menuitem"
                 tabIndex={-1}
               >
@@ -591,7 +607,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                   keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                   onClick={[Function]}
                   onFocus={[Function]}
-                  onMouseEnter={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseMove={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
@@ -612,7 +629,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                     onClick={[Function]}
                     onFocus={[Function]}
-                    onMouseEnter={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseMove={[Function]}
                     role="menuitem"
                     tabIndex={-1}
                     type="button"
@@ -627,8 +645,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      onMouseMove={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
                       onTouchMove={[Function]}

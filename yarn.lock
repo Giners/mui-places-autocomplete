@@ -1953,8 +1953,8 @@ dotenv@^4.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
 
 downshift@^1.22.5:
-  version "1.22.5"
-  resolved "https://registry.yarnpkg.com/downshift/-/downshift-1.22.5.tgz#48103b2f80259157b01b96d6bdc344c51ce0743e"
+  version "1.31.2"
+  resolved "https://registry.yarnpkg.com/downshift/-/downshift-1.31.2.tgz#6f638e9720d7540d9dffa0b4c4587cf10811cf8c"
 
 duplexer3@^0.1.4:
   version "0.1.4"
