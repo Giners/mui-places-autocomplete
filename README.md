@@ -1,5 +1,5 @@
 # MUIPlacesAutocomplete
-[![Travis CI](https://img.shields.io/travis/Giners/mui-places-autocomplete/master.svg)](https://travis-ci.org/Giners/mui-places-autocomplete/builds)
+[![Build Status](https://travis-ci.org/Giners/mui-places-autocomplete.svg?branch=master)](https://travis-ci.org/Giners/mui-places-autocomplete)
 
 ![Preview](http://g.recordit.co/Rxd49dwbev.gif)
 
