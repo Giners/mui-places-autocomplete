@@ -1,6 +1,8 @@
 # MUIPlacesAutocomplete
 [![Travis CI](https://img.shields.io/travis/Giners/mui-places-autocomplete/master.svg)](https://travis-ci.org/Giners/mui-places-autocomplete/builds)
 
+![Preview](http://g.recordit.co/Rxd49dwbev.gif)
+
 # Features
 * Easy-to-use component for searching for places
 * Place suggestions displayed in realtime
