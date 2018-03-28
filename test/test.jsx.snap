@@ -2,21 +2,20 @@
 
 exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for given application state: Duplicate suggestions aren't rendered 1`] = `
 <MenuList>
-  <withStyles(List)
+  <WithStyles(List)
     className={undefined}
     onBlur={[Function]}
     onKeyDown={[Function]}
     role="menu"
-    rootRef={[Function]}
   >
     <List
       className={undefined}
       classes={
         Object {
-          "dense": "MuiList-dense-49",
-          "padding": "MuiList-padding-48",
-          "root": "MuiList-root-47",
-          "subheader": "MuiList-subheader-50",
+          "dense": "MuiList-dense-48",
+          "padding": "MuiList-padding-47",
+          "root": "MuiList-root-46",
+          "subheader": "MuiList-subheader-49",
         }
       }
       component="ul"
@@ -25,66 +24,69 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
       onBlur={[Function]}
       onKeyDown={[Function]}
       role="menu"
-      rootRef={[Function]}
     >
       <ul
-        className="MuiList-root-47 MuiList-padding-48"
+        className="MuiList-root-46 MuiList-padding-47"
         onBlur={[Function]}
         onKeyDown={[Function]}
         role="menu"
       >
-        <withStyles(MenuItem)
+        <WithStyles(MenuItem)
           component="div"
-          id="downshift-1-item-0"
+          id="downshift-3-item-0"
           key=".0:$Bellingham, WA, United States"
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseEnter={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
           selected={false}
           tabIndex={-1}
         >
           <MenuItem
             classes={
               Object {
-                "root": "MuiMenuItem-root-51",
-                "selected": "MuiMenuItem-selected-52",
+                "root": "MuiMenuItem-root-50",
+                "selected": "MuiMenuItem-selected-51",
               }
             }
             component="div"
-            id="downshift-1-item-0"
+            id="downshift-3-item-0"
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseEnter={[Function]}
+            onMouseDown={[Function]}
+            onMouseMove={[Function]}
             role="menuitem"
             selected={false}
             tabIndex={-1}
           >
-            <withStyles(ListItem)
+            <WithStyles(ListItem)
               button={true}
-              className="MuiMenuItem-root-51"
+              className="MuiMenuItem-root-50"
               component="div"
-              id="downshift-1-item-0"
+              id="downshift-3-item-0"
               onClick={[Function]}
               onFocus={[Function]}
-              onMouseEnter={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
               <ListItem
+                ContainerComponent="li"
                 button={true}
-                className="MuiMenuItem-root-51"
+                className="MuiMenuItem-root-50"
                 classes={
                   Object {
-                    "button": "MuiListItem-button-61",
-                    "container": "MuiListItem-container-54",
-                    "default": "MuiListItem-default-56",
-                    "dense": "MuiListItem-dense-57",
-                    "disabled": "MuiListItem-disabled-58",
-                    "divider": "MuiListItem-divider-59",
-                    "gutters": "MuiListItem-gutters-60",
-                    "keyboardFocused": "MuiListItem-keyboardFocused-55",
-                    "root": "MuiListItem-root-53",
-                    "secondaryAction": "MuiListItem-secondaryAction-62",
+                    "button": "MuiListItem-button-60",
+                    "container": "MuiListItem-container-53",
+                    "default": "MuiListItem-default-55",
+                    "dense": "MuiListItem-dense-56",
+                    "disabled": "MuiListItem-disabled-57",
+                    "divider": "MuiListItem-divider-58",
+                    "gutters": "MuiListItem-gutters-59",
+                    "keyboardFocused": "MuiListItem-keyboardFocused-54",
+                    "root": "MuiListItem-root-52",
+                    "secondaryAction": "MuiListItem-secondaryAction-61",
                   }
                 }
                 component="div"
@@ -92,59 +94,65 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                 disableGutters={false}
                 disabled={false}
                 divider={false}
-                id="downshift-1-item-0"
+                id="downshift-3-item-0"
                 onClick={[Function]}
                 onFocus={[Function]}
-                onMouseEnter={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
                 role="menuitem"
                 tabIndex={-1}
               >
-                <withStyles(ButtonBase)
-                  className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
+                <WithStyles(ButtonBase)
+                  className="MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
+                  classes={
+                    Object {
+                      "keyboardFocused": "MuiListItem-keyboardFocused-54",
+                    }
+                  }
                   component="div"
                   disabled={false}
-                  id="downshift-1-item-0"
-                  keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
+                  id="downshift-3-item-0"
                   onClick={[Function]}
                   onFocus={[Function]}
-                  onMouseEnter={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseMove={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   <ButtonBase
                     centerRipple={false}
-                    className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
+                    className="MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
                     classes={
                       Object {
-                        "disabled": "MuiButtonBase-disabled-64",
-                        "root": "MuiButtonBase-root-63",
+                        "disabled": "MuiButtonBase-disabled-63",
+                        "keyboardFocused": "MuiButtonBase-keyboardFocused-64 MuiListItem-keyboardFocused-54",
+                        "root": "MuiButtonBase-root-62",
                       }
                     }
                     component="div"
                     disableRipple={false}
                     disabled={false}
                     focusRipple={false}
-                    id="downshift-1-item-0"
-                    keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
+                    id="downshift-3-item-0"
                     onClick={[Function]}
                     onFocus={[Function]}
-                    onMouseEnter={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseMove={[Function]}
                     role="menuitem"
                     tabIndex={-1}
                     type="button"
                   >
                     <div
-                      className="MuiButtonBase-root-63 MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
-                      disabled={false}
-                      id="downshift-1-item-0"
+                      className="MuiButtonBase-root-62 MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
+                      id="downshift-3-item-0"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      onMouseMove={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
                       onTouchMove={[Function]}
@@ -176,7 +184,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           , WA, United States
                         </span>
                       </div>
-                      <withStyles(TouchRipple)
+                      <WithStyles(TouchRipple)
                         center={false}
                         innerRef={[Function]}
                       >
@@ -184,13 +192,13 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           center={false}
                           classes={
                             Object {
-                              "ripple": "MuiTouchRipple-ripple-69",
-                              "rippleFast": "MuiTouchRipple-rippleFast-71",
-                              "rippleVisible": "MuiTouchRipple-rippleVisible-70",
+                              "child": "MuiTouchRipple-child-69",
+                              "childLeaving": "MuiTouchRipple-childLeaving-70",
+                              "childPulsate": "MuiTouchRipple-childPulsate-71",
+                              "ripple": "MuiTouchRipple-ripple-66",
+                              "ripplePulsate": "MuiTouchRipple-ripplePulsate-68",
+                              "rippleVisible": "MuiTouchRipple-rippleVisible-67",
                               "root": "MuiTouchRipple-root-65",
-                              "wrapper": "MuiTouchRipple-wrapper-66",
-                              "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-67",
-                              "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-68",
                             }
                           }
                         >
@@ -206,14 +214,14 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                             />
                           </TransitionGroup>
                         </TouchRipple>
-                      </withStyles(TouchRipple)>
+                      </WithStyles(TouchRipple)>
                     </div>
                   </ButtonBase>
-                </withStyles(ButtonBase)>
+                </WithStyles(ButtonBase)>
               </ListItem>
-            </withStyles(ListItem)>
+            </WithStyles(ListItem)>
           </MenuItem>
-        </withStyles(MenuItem)>
+        </WithStyles(MenuItem)>
         <div
           key=".1"
           onFocus={[Function]}
@@ -238,27 +246,26 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
         </div>
       </ul>
     </List>
-  </withStyles(List)>
+  </WithStyles(List)>
 </MenuList>
 `;
 
 exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for given application state: Google logo is present in a populated list of suggestions 1`] = `
 <MenuList>
-  <withStyles(List)
+  <WithStyles(List)
     className={undefined}
     onBlur={[Function]}
     onKeyDown={[Function]}
     role="menu"
-    rootRef={[Function]}
   >
     <List
       className={undefined}
       classes={
         Object {
-          "dense": "MuiList-dense-49",
-          "padding": "MuiList-padding-48",
-          "root": "MuiList-root-47",
-          "subheader": "MuiList-subheader-50",
+          "dense": "MuiList-dense-48",
+          "padding": "MuiList-padding-47",
+          "root": "MuiList-root-46",
+          "subheader": "MuiList-subheader-49",
         }
       }
       component="ul"
@@ -267,66 +274,69 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
       onBlur={[Function]}
       onKeyDown={[Function]}
       role="menu"
-      rootRef={[Function]}
     >
       <ul
-        className="MuiList-root-47 MuiList-padding-48"
+        className="MuiList-root-46 MuiList-padding-47"
         onBlur={[Function]}
         onKeyDown={[Function]}
         role="menu"
       >
-        <withStyles(MenuItem)
+        <WithStyles(MenuItem)
           component="div"
-          id="downshift-1-item-0"
+          id="downshift-4-item-0"
           key=".0:$Bellingham, WA, United States"
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseEnter={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
           selected={false}
           tabIndex={-1}
         >
           <MenuItem
             classes={
               Object {
-                "root": "MuiMenuItem-root-51",
-                "selected": "MuiMenuItem-selected-52",
+                "root": "MuiMenuItem-root-50",
+                "selected": "MuiMenuItem-selected-51",
               }
             }
             component="div"
-            id="downshift-1-item-0"
+            id="downshift-4-item-0"
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseEnter={[Function]}
+            onMouseDown={[Function]}
+            onMouseMove={[Function]}
             role="menuitem"
             selected={false}
             tabIndex={-1}
           >
-            <withStyles(ListItem)
+            <WithStyles(ListItem)
               button={true}
-              className="MuiMenuItem-root-51"
+              className="MuiMenuItem-root-50"
               component="div"
-              id="downshift-1-item-0"
+              id="downshift-4-item-0"
               onClick={[Function]}
               onFocus={[Function]}
-              onMouseEnter={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
               <ListItem
+                ContainerComponent="li"
                 button={true}
-                className="MuiMenuItem-root-51"
+                className="MuiMenuItem-root-50"
                 classes={
                   Object {
-                    "button": "MuiListItem-button-61",
-                    "container": "MuiListItem-container-54",
-                    "default": "MuiListItem-default-56",
-                    "dense": "MuiListItem-dense-57",
-                    "disabled": "MuiListItem-disabled-58",
-                    "divider": "MuiListItem-divider-59",
-                    "gutters": "MuiListItem-gutters-60",
-                    "keyboardFocused": "MuiListItem-keyboardFocused-55",
-                    "root": "MuiListItem-root-53",
-                    "secondaryAction": "MuiListItem-secondaryAction-62",
+                    "button": "MuiListItem-button-60",
+                    "container": "MuiListItem-container-53",
+                    "default": "MuiListItem-default-55",
+                    "dense": "MuiListItem-dense-56",
+                    "disabled": "MuiListItem-disabled-57",
+                    "divider": "MuiListItem-divider-58",
+                    "gutters": "MuiListItem-gutters-59",
+                    "keyboardFocused": "MuiListItem-keyboardFocused-54",
+                    "root": "MuiListItem-root-52",
+                    "secondaryAction": "MuiListItem-secondaryAction-61",
                   }
                 }
                 component="div"
@@ -334,59 +344,65 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                 disableGutters={false}
                 disabled={false}
                 divider={false}
-                id="downshift-1-item-0"
+                id="downshift-4-item-0"
                 onClick={[Function]}
                 onFocus={[Function]}
-                onMouseEnter={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
                 role="menuitem"
                 tabIndex={-1}
               >
-                <withStyles(ButtonBase)
-                  className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
+                <WithStyles(ButtonBase)
+                  className="MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
+                  classes={
+                    Object {
+                      "keyboardFocused": "MuiListItem-keyboardFocused-54",
+                    }
+                  }
                   component="div"
                   disabled={false}
-                  id="downshift-1-item-0"
-                  keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
+                  id="downshift-4-item-0"
                   onClick={[Function]}
                   onFocus={[Function]}
-                  onMouseEnter={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseMove={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   <ButtonBase
                     centerRipple={false}
-                    className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
+                    className="MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
                     classes={
                       Object {
-                        "disabled": "MuiButtonBase-disabled-64",
-                        "root": "MuiButtonBase-root-63",
+                        "disabled": "MuiButtonBase-disabled-63",
+                        "keyboardFocused": "MuiButtonBase-keyboardFocused-64 MuiListItem-keyboardFocused-54",
+                        "root": "MuiButtonBase-root-62",
                       }
                     }
                     component="div"
                     disableRipple={false}
                     disabled={false}
                     focusRipple={false}
-                    id="downshift-1-item-0"
-                    keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
+                    id="downshift-4-item-0"
                     onClick={[Function]}
                     onFocus={[Function]}
-                    onMouseEnter={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseMove={[Function]}
                     role="menuitem"
                     tabIndex={-1}
                     type="button"
                   >
                     <div
-                      className="MuiButtonBase-root-63 MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
-                      disabled={false}
-                      id="downshift-1-item-0"
+                      className="MuiButtonBase-root-62 MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
+                      id="downshift-4-item-0"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onFocus={[Function]}
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      onMouseMove={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
                       onTouchMove={[Function]}
@@ -418,7 +434,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           , WA, United States
                         </span>
                       </div>
-                      <withStyles(TouchRipple)
+                      <WithStyles(TouchRipple)
                         center={false}
                         innerRef={[Function]}
                       >
@@ -426,13 +442,13 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           center={false}
                           classes={
                             Object {
-                              "ripple": "MuiTouchRipple-ripple-69",
-                              "rippleFast": "MuiTouchRipple-rippleFast-71",
-                              "rippleVisible": "MuiTouchRipple-rippleVisible-70",
+                              "child": "MuiTouchRipple-child-69",
+                              "childLeaving": "MuiTouchRipple-childLeaving-70",
+                              "childPulsate": "MuiTouchRipple-childPulsate-71",
+                              "ripple": "MuiTouchRipple-ripple-66",
+                              "ripplePulsate": "MuiTouchRipple-ripplePulsate-68",
+                              "rippleVisible": "MuiTouchRipple-rippleVisible-67",
                               "root": "MuiTouchRipple-root-65",
-                              "wrapper": "MuiTouchRipple-wrapper-66",
-                              "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-67",
-                              "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-68",
                             }
                           }
                         >
@@ -448,14 +464,14 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                             />
                           </TransitionGroup>
                         </TouchRipple>
-                      </withStyles(TouchRipple)>
+                      </WithStyles(TouchRipple)>
                     </div>
                   </ButtonBase>
-                </withStyles(ButtonBase)>
+                </WithStyles(ButtonBase)>
               </ListItem>
-            </withStyles(ListItem)>
+            </WithStyles(ListItem)>
           </MenuItem>
-        </withStyles(MenuItem)>
+        </WithStyles(MenuItem)>
         <div
           key=".1"
           onFocus={[Function]}
@@ -480,27 +496,26 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
         </div>
       </ul>
     </List>
-  </withStyles(List)>
+  </WithStyles(List)>
 </MenuList>
 `;
 
 exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for given application state: Suggestions rendered from 'suggestions' state 1`] = `
 <MenuList>
-  <withStyles(List)
+  <WithStyles(List)
     className={undefined}
     onBlur={[Function]}
     onKeyDown={[Function]}
     role="menu"
-    rootRef={[Function]}
   >
     <List
       className={undefined}
       classes={
         Object {
-          "dense": "MuiList-dense-49",
-          "padding": "MuiList-padding-48",
-          "root": "MuiList-root-47",
-          "subheader": "MuiList-subheader-50",
+          "dense": "MuiList-dense-48",
+          "padding": "MuiList-padding-47",
+          "root": "MuiList-root-46",
+          "subheader": "MuiList-subheader-49",
         }
       }
       component="ul"
@@ -509,66 +524,69 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
       onBlur={[Function]}
       onKeyDown={[Function]}
       role="menu"
-      rootRef={[Function]}
     >
       <ul
-        className="MuiList-root-47 MuiList-padding-48"
+        className="MuiList-root-46 MuiList-padding-47"
         onBlur={[Function]}
         onKeyDown={[Function]}
         role="menu"
       >
-        <withStyles(MenuItem)
+        <WithStyles(MenuItem)
           component="div"
           id="downshift-1-item-0"
           key=".0:$Bellingham, WA, United States"
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseEnter={[Function]}
+          onMouseDown={[Function]}
+          onMouseMove={[Function]}
           selected={false}
           tabIndex={-1}
         >
           <MenuItem
             classes={
               Object {
-                "root": "MuiMenuItem-root-51",
-                "selected": "MuiMenuItem-selected-52",
+                "root": "MuiMenuItem-root-50",
+                "selected": "MuiMenuItem-selected-51",
               }
             }
             component="div"
             id="downshift-1-item-0"
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseEnter={[Function]}
+            onMouseDown={[Function]}
+            onMouseMove={[Function]}
             role="menuitem"
             selected={false}
             tabIndex={-1}
           >
-            <withStyles(ListItem)
+            <WithStyles(ListItem)
               button={true}
-              className="MuiMenuItem-root-51"
+              className="MuiMenuItem-root-50"
               component="div"
               id="downshift-1-item-0"
               onClick={[Function]}
               onFocus={[Function]}
-              onMouseEnter={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
               <ListItem
+                ContainerComponent="li"
                 button={true}
-                className="MuiMenuItem-root-51"
+                className="MuiMenuItem-root-50"
                 classes={
                   Object {
-                    "button": "MuiListItem-button-61",
-                    "container": "MuiListItem-container-54",
-                    "default": "MuiListItem-default-56",
-                    "dense": "MuiListItem-dense-57",
-                    "disabled": "MuiListItem-disabled-58",
-                    "divider": "MuiListItem-divider-59",
-                    "gutters": "MuiListItem-gutters-60",
-                    "keyboardFocused": "MuiListItem-keyboardFocused-55",
-                    "root": "MuiListItem-root-53",
-                    "secondaryAction": "MuiListItem-secondaryAction-62",
+                    "button": "MuiListItem-button-60",
+                    "container": "MuiListItem-container-53",
+                    "default": "MuiListItem-default-55",
+                    "dense": "MuiListItem-dense-56",
+                    "disabled": "MuiListItem-disabled-57",
+                    "divider": "MuiListItem-divider-58",
+                    "gutters": "MuiListItem-gutters-59",
+                    "keyboardFocused": "MuiListItem-keyboardFocused-54",
+                    "root": "MuiListItem-root-52",
+                    "secondaryAction": "MuiListItem-secondaryAction-61",
                   }
                 }
                 component="div"
@@ -579,29 +597,36 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                 id="downshift-1-item-0"
                 onClick={[Function]}
                 onFocus={[Function]}
-                onMouseEnter={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
                 role="menuitem"
                 tabIndex={-1}
               >
-                <withStyles(ButtonBase)
-                  className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
+                <WithStyles(ButtonBase)
+                  className="MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
+                  classes={
+                    Object {
+                      "keyboardFocused": "MuiListItem-keyboardFocused-54",
+                    }
+                  }
                   component="div"
                   disabled={false}
                   id="downshift-1-item-0"
-                  keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                   onClick={[Function]}
                   onFocus={[Function]}
-                  onMouseEnter={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseMove={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   <ButtonBase
                     centerRipple={false}
-                    className="MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
+                    className="MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
                     classes={
                       Object {
-                        "disabled": "MuiButtonBase-disabled-64",
-                        "root": "MuiButtonBase-root-63",
+                        "disabled": "MuiButtonBase-disabled-63",
+                        "keyboardFocused": "MuiButtonBase-keyboardFocused-64 MuiListItem-keyboardFocused-54",
+                        "root": "MuiButtonBase-root-62",
                       }
                     }
                     component="div"
@@ -609,17 +634,16 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                     disabled={false}
                     focusRipple={false}
                     id="downshift-1-item-0"
-                    keyboardFocusedClassName="MuiListItem-keyboardFocused-55"
                     onClick={[Function]}
                     onFocus={[Function]}
-                    onMouseEnter={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseMove={[Function]}
                     role="menuitem"
                     tabIndex={-1}
                     type="button"
                   >
                     <div
-                      className="MuiButtonBase-root-63 MuiListItem-root-53 MuiListItem-gutters-60 MuiListItem-button-61 MuiListItem-default-56 MuiMenuItem-root-51"
-                      disabled={false}
+                      className="MuiButtonBase-root-62 MuiListItem-root-52 MuiListItem-default-55 MuiListItem-gutters-59 MuiListItem-button-60 MuiMenuItem-root-50"
                       id="downshift-1-item-0"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -627,8 +651,8 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                       onKeyDown={[Function]}
                       onKeyUp={[Function]}
                       onMouseDown={[Function]}
-                      onMouseEnter={[Function]}
                       onMouseLeave={[Function]}
+                      onMouseMove={[Function]}
                       onMouseUp={[Function]}
                       onTouchEnd={[Function]}
                       onTouchMove={[Function]}
@@ -660,7 +684,7 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           , WA, United States
                         </span>
                       </div>
-                      <withStyles(TouchRipple)
+                      <WithStyles(TouchRipple)
                         center={false}
                         innerRef={[Function]}
                       >
@@ -668,13 +692,13 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                           center={false}
                           classes={
                             Object {
-                              "ripple": "MuiTouchRipple-ripple-69",
-                              "rippleFast": "MuiTouchRipple-rippleFast-71",
-                              "rippleVisible": "MuiTouchRipple-rippleVisible-70",
+                              "child": "MuiTouchRipple-child-69",
+                              "childLeaving": "MuiTouchRipple-childLeaving-70",
+                              "childPulsate": "MuiTouchRipple-childPulsate-71",
+                              "ripple": "MuiTouchRipple-ripple-66",
+                              "ripplePulsate": "MuiTouchRipple-ripplePulsate-68",
+                              "rippleVisible": "MuiTouchRipple-rippleVisible-67",
                               "root": "MuiTouchRipple-root-65",
-                              "wrapper": "MuiTouchRipple-wrapper-66",
-                              "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-67",
-                              "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-68",
                             }
                           }
                         >
@@ -690,14 +714,14 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
                             />
                           </TransitionGroup>
                         </TouchRipple>
-                      </withStyles(TouchRipple)>
+                      </WithStyles(TouchRipple)>
                     </div>
                   </ButtonBase>
-                </withStyles(ButtonBase)>
+                </WithStyles(ButtonBase)>
               </ListItem>
-            </withStyles(ListItem)>
+            </WithStyles(ListItem)>
           </MenuItem>
-        </withStyles(MenuItem)>
+        </WithStyles(MenuItem)>
         <div
           key=".1"
           onFocus={[Function]}
@@ -722,6 +746,6 @@ exports[`React component test: <MUIPlacesAutocomplete> Renders correctly for giv
         </div>
       </ul>
     </List>
-  </withStyles(List)>
+  </WithStyles(List)>
 </MenuList>
 `;

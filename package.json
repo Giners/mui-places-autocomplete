@@ -31,7 +31,7 @@
     "autosuggest-highlight": "^3.1.0",
     "downshift": "^1.22.5",
     "prop-types": "^15.6.0",
-    "react-popper": "^0.7.4"
+    "react-popper": "^0.8.3"
   },
   "peerDependencies": {
     "material-ui": "^1.0.0-beta.21",

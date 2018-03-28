@@ -31,7 +31,7 @@ class DemoBasic extends React.Component {
           renderTarget={() => (<div />)}
         />
         <Snackbar
-          onRequestClose={this.onClose}
+          onClose={this.onClose}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
           autoHideDuration={5000}
           open={open}

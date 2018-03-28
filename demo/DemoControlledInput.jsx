@@ -33,7 +33,7 @@ const renderMUIPlacesAutocomplete = ({ onSuggestionSelected, ...other }) => (
           marginTop: 16,
         }}
       >
-        <Button raised color="primary" type="submit">Submit</Button>
+        <Button variant="raised" color="primary" type="submit">Submit</Button>
       </div>
     )}
     textFieldProps={{ ...other }}
@@ -105,7 +105,7 @@ class DemoControlledInputContainer extends React.Component {
       <div>
         <ConnectedDemoControlledInput onSubmit={this.onSubmit} />
         <Snackbar
-          onRequestClose={this.onClose}
+          onClose={this.onClose}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
           autoHideDuration={5000}
           open={open}
