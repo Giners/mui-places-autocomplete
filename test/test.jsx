@@ -16,7 +16,7 @@ import React from 'react'
 import MUIPlacesAutocomplete from './../src'
 
 // Supporting test code
-import getACServiceClassDef from './testHelper'
+import { getACServiceClassDef } from './testHelper'
 
 // Configure Chai to work with Jest
 chai.use(chaiJestSnapshot)
