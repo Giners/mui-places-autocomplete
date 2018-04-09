@@ -17,6 +17,7 @@ import Typography from 'material-ui/Typography'
 import rootReducer from './rootReducer'
 import DemoBasic from './DemoBasic'
 import DemoControlledInput from './DemoControlledInput'
+import DemoGeocodeLatLong from './DemoGeocodeLatLong'
 
 // Map of demos that one can select to view
 const demos = {
@@ -24,6 +25,10 @@ const demos = {
   [DemoControlledInput.name]: {
     description: DemoControlledInput.description,
     component: DemoControlledInput,
+  },
+  [DemoGeocodeLatLong.name]: {
+    description: DemoGeocodeLatLong.description,
+    component: DemoGeocodeLatLong,
   },
 }
 

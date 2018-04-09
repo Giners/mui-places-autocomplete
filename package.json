@@ -11,7 +11,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "yarn test:mocha && yarn test:eslint",
-    "test:mocha": "mocha --exit --require babel-register --require ignore-styles --require test/setup-dom.js test/test.jsx",
+    "test:mocha": "mocha --exit --require babel-register --require ignore-styles --require test/setup-dom.js test/test.jsx test/testGeocode.js",
     "test:eslint": "eslint --max-warnings 0 --cache --ext .js,.jsx src test demo",
     "demo": "webpack-dev-server --config demo/webpack.config.js --content-base dist --hot --host 0.0.0.0",
     "build": "rm -rf dist/ && webpack",
