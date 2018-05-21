@@ -8,7 +8,7 @@
 * Place suggestions displayed in realtime
 * Input state can be controlled externally
 * Promise based [geocoding utility functions (latitude/longitude)](#geocodingFunctions)
-* Google Material Design styling provided by next version of Material-UI (v1)
+* Google Material Design styling provided by Material-UI (v1)
 * Safe to render on the server (SSR)
 * Integrates with other 3rd party libraries (e.g. [Redux Form](#advancedUsage))
 * Thoroughly tested
