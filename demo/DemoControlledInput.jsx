@@ -7,8 +7,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
-import Button from 'material-ui/Button'
-import Snackbar from 'material-ui/Snackbar'
+import Button from '@material-ui/core/Button'
+import Snackbar from '@material-ui/core/Snackbar'
 import MUIPlacesAutocomplete from './../dist'
 
 // Stateless function that we pass to the 'component' prop of the <Field> to render
