@@ -110,6 +110,7 @@ This component also has testing which makes use of the Places library in the Goo
 | [`renderTarget`](#renderTarget) | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
 | [`createAutocompleteRequest`](#createAutocompleteRequest) | Function | | Returns an object that modifies which suggestions are shown to the user. |
 | [`textFieldProps`](#textFieldProps) | Object | | Props that will be spread onto a `<TextField>` MUI component that is responsible for rendering the `<input>` element. If you would like to [control the state of the `<input>` element](#textFieldPropsValueProp) externally you must set the `value` key on the object passed to `textFieldProps`. |
+| [`suggestionsContainerProps`](#suggestionsContainerProps) | Object | | Props that will be included on the `<Popper>` container component which includes the list of suggestions. |
 
 <a name="onSuggestionSelected"></a>
 #### onSuggestionSelected (required)
@@ -182,6 +183,17 @@ const { inputValue } = getState()
 ```
 
 If you would like to have consistency between the controlled `<input>` elements state as well as any suggestions that are selected then you need to update the controlled state of the `<input>` element when a [suggestion is selected](#onSuggestionSelected). There is an example of how to do this in the [advanced usage section](#advancedUsage).
+
+<a name="suggestionsContainerProps"></a>
+#### suggestionsContainerProps
+
+A `<Popper>` component is used to contain the suggestions displayed to the user. It can be customised to meet your needs by supplying an object to the `suggestionsContainerProps` prop. All properties on the object supplied to the `suggestionsContainerProps` prop will be spread onto the `<Popper>` component. You can read more about the props that the `<Popper>` component accepts here: [`<Popper>` Github Repository](https://github.com/FezVrasta/react-popper)
+
+Below is an example of how to control the width of the suggestions container using the `style` property of the `suggestionsContainerProps` object:
+
+```javascript
+<MUIPlacesAutocomplete suggestionsContainerProps={{ style: { width: '400px' } }} />
+```
 
 <a name="geocodingFunctions"></a>
 ### Geocoding utility functions (latitude/longitude)

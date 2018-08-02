@@ -306,6 +306,193 @@ describe('React component test: <MUIPlacesAutocomplete>', function () {
       expect(styleProps.zIndex).to.exist
       expect(styleProps.zIndex).to.be.equal(1)
     })
+
+    it('\'suggestionsContainerProps.style\' can be used to set \'width\' and retain defaults', function () {
+      const width = '400px'
+
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete
+          onSuggestionSelected={() => {}}
+          renderTarget={() => (<div />)}
+          suggestionsContainerProps={{
+            style: { width },
+          }}
+        />,
+      )
+
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      const pWrapper = mpaWrapper.find('Popper')
+      expect(pWrapper.exists()).to.be.true
+
+      const styleProps = pWrapper.prop('style')
+      expect(styleProps).to.exist
+      expect(styleProps.width).to.exist
+      expect(styleProps.width).to.be.equal(width)
+      expect(styleProps.left).to.exist
+      expect(styleProps.left).to.be.equal(0)
+      expect(styleProps.right).to.exist
+      expect(styleProps.right).to.be.equal(0)
+      expect(styleProps.zIndex).to.exist
+      expect(styleProps.zIndex).to.be.equal(1)
+    })
+
+    it('\'suggestionsContainerProps.style\' can be used to override \'style\' defaults', function () {
+      const style = {
+        left: 50,
+        right: 15,
+        zIndex: 4,
+      }
+
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete
+          onSuggestionSelected={() => {}}
+          renderTarget={() => (<div />)}
+          suggestionsContainerProps={{ style }}
+        />,
+      )
+
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      const pWrapper = mpaWrapper.find('Popper')
+      expect(pWrapper.exists()).to.be.true
+
+      const styleProps = pWrapper.prop('style')
+      expect(styleProps).to.exist
+      expect(styleProps.left).to.exist
+      expect(styleProps.left).to.be.equal(style.left)
+      expect(styleProps.right).to.exist
+      expect(styleProps.right).to.be.equal(style.right)
+      expect(styleProps.zIndex).to.exist
+      expect(styleProps.zIndex).to.be.equal(style.zIndex)
+    })
+
+    it('\'suggestionsContainerProps.modifiers\' can be used to set \'hide\' and retain defaults', function () {
+      const modifiers = { hide: { enabled: true } }
+
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete
+          onSuggestionSelected={() => {}}
+          renderTarget={() => (<div />)}
+          suggestionsContainerProps={{ modifiers }}
+        />,
+      )
+
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      const pWrapper = mpaWrapper.find('Popper')
+      expect(pWrapper.exists()).to.be.true
+
+      const modifiersProps = pWrapper.prop('modifiers')
+      expect(modifiersProps).to.exist
+      expect(modifiersProps.inner).to.exist
+      expect(modifiersProps.inner.enabled).to.exist
+      expect(modifiersProps.inner.enabled).to.be.equal(true)
+      expect(modifiersProps.hide).to.exist
+      expect(modifiersProps.hide.enabled).to.exist
+      expect(modifiersProps.hide.enabled).to.be.equal(modifiers.hide.enabled)
+    })
+
+    it('\'suggestionsContainerProps.modifiers\' can be used to override \'inner\' default', function () {
+      const modifiers = { inner: { enabled: false } }
+
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete
+          onSuggestionSelected={() => {}}
+          renderTarget={() => (<div />)}
+          suggestionsContainerProps={{ modifiers }}
+        />,
+      )
+
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      const pWrapper = mpaWrapper.find('Popper')
+      expect(pWrapper.exists()).to.be.true
+
+      const modifiersProps = pWrapper.prop('modifiers')
+      expect(modifiersProps).to.exist
+      expect(modifiersProps.inner).to.exist
+      expect(modifiersProps.inner.enabled).to.exist
+      expect(modifiersProps.inner.enabled).to.be.equal(modifiers.inner.enabled)
+    })
+
+    it('\'suggestionsContainerProps.placement\' can be used to override default', function () {
+      const placement = 'bottom'
+
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete
+          onSuggestionSelected={() => {}}
+          renderTarget={() => (<div />)}
+          suggestionsContainerProps={{ placement }}
+        />,
+      )
+
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      const pWrapper = mpaWrapper.find('Popper')
+      expect(pWrapper.exists()).to.be.true
+
+      const placementProps = pWrapper.prop('placement')
+      expect(placementProps).to.exist
+      expect(placementProps).to.be.equal(placement)
+    })
+
+    it('\'suggestionsContainerProps\' can be used to add additional props', function () {
+      const eventsEnabled = true;
+
+      mpaWrapper = mount(
+        <MUIPlacesAutocomplete
+          onSuggestionSelected={() => {}}
+          renderTarget={() => (<div />)}
+          suggestionsContainerProps={{ eventsEnabled }}
+        />,
+      )
+
+      // To get suggestions to be rendered first simulate an input onChange event which will cause
+      // <Downshift> to believe that our autocomplete/dropdown is open...
+      mpaWrapper.find('input').simulate('change', { target: { value: searchInputValue } })
+
+      // Second set the start of our component to provide suggestions as if they were returned from
+      // the Google AutocompleteService...
+      mpaWrapper.setState({ suggestions: [{ description: 'Bellingham, WA, United States' }] })
+
+      const pWrapper = mpaWrapper.find('Popper')
+      expect(pWrapper.exists()).to.be.true
+
+      const placementProps = pWrapper.prop('eventsEnabled')
+      expect(placementProps).to.exist
+      expect(placementProps).to.be.equal(eventsEnabled)
+    })
   })
 
   describe('Consumes Google Maps JavaScript API correctly:', function () {

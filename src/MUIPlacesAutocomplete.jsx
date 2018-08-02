@@ -29,7 +29,10 @@ export default class MUIPlacesAutocomplete extends React.Component {
   // * inputValue - current value of the controlled <input> element
   // * highlightedIndex - index of the currently highlighted menu item elements that have been
   // rendered
-  static renderSuggestionsContainer(suggestions, downshiftRenderProps) {
+  //
+  // The 'containerProps' argument expects an object of props that will be applied to the Popper
+  // and is generally used to override the style of how the container is rendered e.g. width
+  static renderSuggestionsContainer(suggestions, downshiftRenderProps, containerProps) {
     // Return null here if there are no suggestions to render. If we don't we will show a little box
     // that is empty and popped over the render target. This handles the case where a suggestion is
     // selected, the input value is updated, and then the user deletes the input value. This
@@ -63,11 +66,28 @@ export default class MUIPlacesAutocomplete extends React.Component {
     // will get the following warnings: NaN is an invalid value for the top/left css style property.
     // This is because the DOM provider/implementation we use when testing (jsdom) doesn't return
     // values for bounding client rect.
+    const {
+      style: _containerStyle,
+      modifiers: _containerModifiers,
+      placement: containerPlacement,
+      ...restContainerProps
+    } = containerProps
+    const containerStyle = _containerStyle || {}
+    const containerModifiers = _containerModifiers || {}
     return (
       <Popper
-        placement="top-start"
-        modifiers={({ inner: { enabled: true } })}
-        style={{ left: 0, right: 0, zIndex: 1 }}
+        placement={containerPlacement || 'top-start'}
+        modifiers={({
+          inner: containerModifiers.inner || { enabled: true },
+          ...containerModifiers,
+        })}
+        style={{
+          ...containerStyle,
+          left: containerStyle.left || 0,
+          right: containerStyle.right || 0,
+          zIndex: containerStyle.zIndex || 1,
+        }}
+        {...restContainerProps}
       >
         {({ popperProps, restProps }) => (
           <div
@@ -228,7 +248,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
     highlightedIndex,
   }) {
     const { suggestions } = this.state
-    const { renderTarget, textFieldProps } = this.props
+    const { renderTarget, textFieldProps, suggestionsContainerProps } = this.props
 
     // We set the value of 'tag' on the <Manager> component to false to allow the rendering of
     // children instead of a specific DOM element.
@@ -249,6 +269,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
           {isOpen ? MUIPlacesAutocomplete.renderSuggestionsContainer(
                       suggestions,
                       { getItemProps, inputValue, highlightedIndex },
+                      suggestionsContainerProps,
                       )
                   : null}
         </Manager>
@@ -281,9 +302,11 @@ MUIPlacesAutocomplete.propTypes = {
   renderTarget: PropTypes.func.isRequired,
   createAutocompleteRequest: PropTypes.func,
   textFieldProps: PropTypes.object,
+  suggestionsContainerProps: PropTypes.object,
 }
 
 MUIPlacesAutocomplete.defaultProps = {
   createAutocompleteRequest: inputValue => ({ input: inputValue }),
   textFieldProps: { autoFocus: false, placeholder: 'Search for a place', fullWidth: true },
+  suggestionsContainerProps: {},
 }
