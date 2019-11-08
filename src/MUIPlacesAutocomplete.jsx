@@ -88,7 +88,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
                       ? (
                         <div style={{ display: 'flex' }}>
                           <span style={{ flex: 1 }} />
-                          <img src={googleLogo} alt="" />
+                          <img style={{ 'max-width': '120px', margin: '5px 20px 0 0' src={googleLogo} alt="" />
                         </div>
                         )
                       : null}
