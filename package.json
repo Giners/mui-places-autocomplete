@@ -8,7 +8,7 @@
   },
   "author": "Chris Austin <caustin.adwan@gmail.com>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "yarn test:mocha && yarn test:eslint",
     "test:mocha": "mocha --exit --require babel-register --require ignore-styles --require test/setup-dom.js test/test.jsx test/testGeocode.js",
@@ -30,7 +30,7 @@
   "dependencies": {
     "autosuggest-highlight": "^3.1.0",
     "downshift": "^1.22.5",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.7.2",
     "react-popper": "^0.8.3"
   },
   "peerDependencies": {
