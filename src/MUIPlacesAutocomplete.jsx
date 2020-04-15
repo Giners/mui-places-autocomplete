@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import _intersection from 'lodash/_intersection'
 import Grow from '@material-ui/core/Grow'
 import MenuList from '@material-ui/core/MenuList'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -9,7 +10,6 @@ import Downshift from 'downshift'
 import { Manager, Target, Popper } from 'react-popper'
 import match from 'autosuggest-highlight/match'
 import parse from 'autosuggest-highlight/parse'
-
 import googleLogo from './images/google-logo-on-white-bg.png'
 
 export default class MUIPlacesAutocomplete extends React.Component {
@@ -191,7 +191,7 @@ export default class MUIPlacesAutocomplete extends React.Component {
       return
     }
 
-    const { createAutocompleteRequest } = this.props
+    const { createAutocompleteRequest, excludeTypes = null } = this.props
 
     this.autocompleteService.getPlacePredictions(
       createAutocompleteRequest(inputValue),
@@ -203,7 +203,11 @@ export default class MUIPlacesAutocomplete extends React.Component {
           return
         }
 
-        this.setState({ suggestions: predictions })
+        const predictionsToRender = excludeTypes
+          ? predictions.filter(prediction => _intersection(prediction.types, excludeTypes).length <= 0)
+          : predictions
+
+        this.setState({ suggestions: predictionsToRender })
       },
     )
   }
