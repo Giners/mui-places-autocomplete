@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import _intersection from 'lodash.intersection'
+import _intersection from 'lodash/intersection'
 import Grow from '@material-ui/core/Grow'
 import MenuList from '@material-ui/core/MenuList'
 import MenuItem from '@material-ui/core/MenuItem'
