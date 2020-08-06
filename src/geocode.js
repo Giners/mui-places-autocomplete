@@ -26,3 +26,24 @@ export const geocodeByPlaceID = (placeId) => {
 // Maps service have properties that are snake cased
 // eslint-disable-next-line camelcase
 export const geocodeBySuggestion = ({ place_id }) => geocodeByPlaceID(place_id)
+
+
+export const geocodeByCoordinates = ({ location }) => {
+  const geocoder = new window.google.maps.Geocoder()
+
+  return new Promise((resolve, reject) => {
+    geocoder.geocode({ location }, (results, status) => {
+      if (status !== window.google.maps.GeocoderStatus.OK) {
+        reject(
+          new Error(
+            `Geocoding query for coordinates '${location.lng}, ${location.lat}' failed - response status: ${status}`,
+          ),
+        )
+
+        return
+      }
+
+      resolve(results)
+    })
+  })
+}

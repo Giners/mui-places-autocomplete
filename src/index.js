@@ -1,5 +1,5 @@
 import MUIPlacesAutocomplete from './MUIPlacesAutocomplete'
-import { geocodeByPlaceID, geocodeBySuggestion } from './geocode'
+import { geocodeByPlaceID, geocodeBySuggestion, geocodeByCoordinates } from './geocode'
 
-export { geocodeByPlaceID, geocodeBySuggestion }
+export { geocodeByPlaceID, geocodeBySuggestion, geocodeByCoordinates }
 export default MUIPlacesAutocomplete
