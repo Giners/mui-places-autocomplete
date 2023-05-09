@@ -1,11 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import _intersection from 'lodash/intersection'
-import Grow from '@material-ui/core/Grow'
-import MenuList from '@material-ui/core/MenuList'
-import MenuItem from '@material-ui/core/MenuItem'
-import Paper from '@material-ui/core/Paper'
-import TextField from '@material-ui/core/TextField'
+import Grow from '@mui/material/Grow'
+import MenuList from '@mui/material/MenuList'
+import MenuItem from '@mui/material/MenuItem'
+import Paper from '@mui/material/Paper'
+import TextField from '@mui/material/TextField'
 import Downshift from 'downshift'
 import { Manager, Target, Popper } from 'react-popper'
 import match from 'autosuggest-highlight/match'
@@ -278,13 +277,6 @@ export default class MUIPlacesAutocomplete extends React.Component {
       />
     )
   }
-}
-
-MUIPlacesAutocomplete.propTypes = {
-  onSuggestionSelected: PropTypes.func.isRequired,
-  renderTarget: PropTypes.func.isRequired,
-  createAutocompleteRequest: PropTypes.func,
-  textFieldProps: PropTypes.object,
 }
 
 MUIPlacesAutocomplete.defaultProps = {

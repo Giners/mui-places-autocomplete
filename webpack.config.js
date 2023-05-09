@@ -17,7 +17,7 @@ module.exports = {
   // to break) while still allowing our component to be consumed off the shelf by bundling our few
   // 'dependencies'.
   externals: [nodeExternals({
-    whitelist: ['autosuggest-highlight', 'prop-types', 'react-autosuggest'],
+    whitelist: ['autosuggest-highlight', 'react-autosuggest'],
   })],
   module: {
     loaders: [
