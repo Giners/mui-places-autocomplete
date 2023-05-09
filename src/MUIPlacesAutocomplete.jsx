@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import _intersection from 'lodash/intersection'
 import Grow from '@mui/material/Grow'
 import MenuList from '@mui/material/MenuList'
@@ -278,13 +277,6 @@ export default class MUIPlacesAutocomplete extends React.Component {
       />
     )
   }
-}
-
-MUIPlacesAutocomplete.propTypes = {
-  onSuggestionSelected: PropTypes.func.isRequired,
-  renderTarget: PropTypes.func.isRequired,
-  createAutocompleteRequest: PropTypes.func,
-  textFieldProps: PropTypes.object,
 }
 
 MUIPlacesAutocomplete.defaultProps = {
