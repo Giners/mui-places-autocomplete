@@ -107,6 +107,7 @@ This component also has testing which makes use of the Places library in the Goo
 | Prop | Type | Required | Description |
 | :--- | :--- | :---: | :--- |
 | [`onSuggestionSelected`](#onSuggestionSelected) | Function | ✓ | Callback that provides the selected suggestion. |
+| [`onAutocompleteFailure`](#onAutocompleteFailure) | Function | ✓ | Callback that provides PlacesServiceStatus returned for a failed suggestion lookup. |
 | [`renderTarget`](#renderTarget) | Function | ✓ | Renders the components/elements that you would like to have the list of suggestions popover. |
 | [`createAutocompleteRequest`](#createAutocompleteRequest) | Function | | Returns an object that modifies which suggestions are shown to the user. |
 | [`textFieldProps`](#textFieldProps) | Object | | Props that will be spread onto a `<TextField>` MUI component that is responsible for rendering the `<input>` element. If you would like to [control the state of the `<input>` element](#textFieldPropsValueProp) externally you must set the `value` key on the object passed to `textFieldProps`. |
@@ -118,6 +119,15 @@ This function will be called everytime a user has selected a suggestion. It has 
 
 ```javascript
 function onSuggestionSelected(suggestion)
+```
+
+<a name="onAutocompleteFailure"></a>
+#### onAutocompleteFailure (required)
+
+This function will be called everytime a autocomplete request returns with a non-OK result. See also https://developers.google.com/maps/documentation/javascript/reference/places-service#PlacesServiceStatus - this includes ZERO_RESULTS
+
+```javascript
+function onAutocompleteFailure(suggestion)
 ```
 
 <a name="renderTarget"></a>
